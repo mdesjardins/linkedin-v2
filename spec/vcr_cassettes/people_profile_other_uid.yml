@@ -2,15 +2,66 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.linkedin.com/v1/people/id=SDmkCxL2ya?oauth2_access_token=dummy_access_token&secure-urls=true
+    uri: https://api.linkedin.com/v2/people/id=SDmkCxL2ya
     body:
       encoding: US-ASCII
       string: ''
     headers:
       X-Li-Format:
       - json
+      Authorization:
+      - Bearer dummy_access_token
       User-Agent:
-      - Faraday v0.9.0
+      - Faraday v0.10.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      X-Restli-Gateway-Error:
+      - 'true'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 25 Apr 2018 17:33:18 GMT
+      X-Li-Fabric:
+      - prod-lva1
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Li-Pop:
+      - prod-ech2
+      X-Li-Proto:
+      - http/1.1
+      Set-Cookie:
+      - lidc="b=VB87:g=1222:u=1:i=1524677598:t=1524763998:s=AQE2dDefuvI56QsgIxIjeUzlHljU8jnj"
+      X-Li-Route-Key:
+      - '"b=VB87:g=1222:u=1:i=1524677598:t=1524763998:s=AQE2dDefuvI56QsgIxIjeUzlHljU8jnj"'
+      X-Li-Uuid:
+      - iJzCtzK+KBXwTkie4ioAAA==
+    body:
+      encoding: UTF-8
+      string: '{"serviceErrorCode":65600,"message":"Invalid access token","status":401}'
+    http_version: 
+  recorded_at: Wed, 25 Apr 2018 17:33:19 GMT
+- request:
+    method: get
+    uri: https://api.linkedin.com/v2/people/id=MpkAFJTlPY
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Li-Format:
+      - json
+      Authorization:
+      - Bearer AQVM91zzF-bLiOfCsTi8ktxnq99l-tW9meri8F9ZEWAuHf5g1bO_Pa4p0nFwKvZ7VFdSERAnJZq3eNOq6BzDPFNIyGIy50s-7HkLq2hE5uy6HrAQrsMAQR_qZxnBrSD11g_M2sF5XB5fUHZOXEQFgFaXB0M19VUAsvsz3yg-7zMI7w9Zn_DYTLO1e2W9VEZrOgVmRNt1XBIT_pdQO7pQkKv4702yJTrIBOuhZWNLZRClPHd2RRhPf2SJeTkodbnL4xSvzcyEPpLaTPyZIVJnBcsAzYFiG_pJtyGs7x-iWbUZsYgnUVSy8Wg-5eqmvze5tuZdICIP0PJ0AVMNGOxRRiLOEh8MSg
+      User-Agent:
+      - Faraday v0.10.1
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -20,40 +71,36 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Server:
-      - Apache-Coyote/1.1
-      X-Li-Request-Id:
-      - AZ9S9N2EFV
-      X-Li-Uuid:
-      - kBv4Vd0YJ6k9BaMMu4l/xg==
-      Vary:
-      - "*"
-      X-Li-Format:
-      - json
       Content-Type:
-      - application/json;charset=UTF-8
+      - application/json
+      X-Restli-Protocol-Version:
+      - 1.0.0
       Date:
-      - Tue, 29 Jul 2014 22:42:16 GMT
+      - Wed, 25 Apr 2018 17:45:51 GMT
       X-Li-Fabric:
-      - PROD-ELA4
+      - prod-lva1
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
       X-Li-Pop:
-      - PROD-ELA4
+      - prod-ech2
+      X-Li-Proto:
+      - http/1.1
       Set-Cookie:
-      - lidc="b=LB66:g=95:u=37:i=1406657453:t=1406743853:s=2424976016"; Expires=Wed,
-        30 Jul 2014 18:10:53 GMT; domain=.linkedin.com; Path=/
+      - lidc="b=VB96:g=1138:u=13:i=1524678351:t=1524753072:s=AQHka97x97CwQdntUgn1IB4Ncgqpf8WC"
+      X-Li-Route-Key:
+      - '"b=VB96:g=1138:u=13:i=1524678351:t=1524753072:s=AQHka97x97CwQdntUgn1IB4Ncgqpf8WC"'
+      X-Li-Uuid:
+      - 0zOY4uG+KBVAo1RFDisAAA==
     body:
       encoding: UTF-8
-      string: |-
-        {
-          "firstName": "Evan",
-          "headline": "Architect of Experience & Builder of Bits at Proximate",
-          "lastName": "Morikawa",
-          "siteStandardProfileRequest": {"url": "https://www.linkedin.com/profile/view?id=44799966&authType=name&authToken=sDyI&trk=api*a135643*s144016*"}
-        }
+      string: '{"industryName":{"localized":{"en_US":"Public Relations"},"preferredLocale":{"country":"US","language":"en"}},"localizedLastName":"Santos
+        del Nariz","lastName":{"localized":{"en_US":"Santos del Nariz"},"preferredLocale":{"country":"US","language":"en"}},"vanityName":"miguel-santos-del-nariz","positions":{"1231524997":{"startMonthYear":{"year":2014},"companyName":{"localized":{"en_US":"Ceres
+        Logic"},"preferredLocale":{"country":"US","language":"en"}},"title":{"localized":{"en_US":"Social
+        Media Specialist"},"preferredLocale":{"country":"US","language":"en"}}},"1069560016":{"startMonthYear":{"year":2009},"endMonthYear":{"year":2014},"companyName":{"localized":{"en_US":"Winletric"},"preferredLocale":{"country":"US","language":"en"}},"title":{"localized":{"en_US":"Warehouse
+        Manager"},"preferredLocale":{"country":"US","language":"en"}}}},"pictureInfo":{"croppedImage":"urn:li:media:/gcrc/dms/image/C4E03AQEmhyl0HXzfGQ/profile-displayphoto-shrink_800_800/0?e=1529863200&v=beta&t=9_PD9ipzIGW059KI0p2I0gt4z1JF4PStzmtIjKa-Ev4","masterImage":"urn:li:media:/gcrc/dms/image/C4E00AQFBxXq_zXDwiw/profile-originalphoto-shrink_900_1200/0?e=1529863200&v=beta&t=IdOyGbCmLUfagV6dFKfKGxwCRp0uRRNP2_Flb8j2EhY","photoFilterEditInfo":{"bottomLeft":{"x":-6.178632484870436E-17,"y":1.0},"saturation":0.0,"brightness":0.0,"vignette":0.0,"photoFilterType":"ORIGINAL","bottomRight":{"x":1.0,"y":1.0},"topLeft":{"x":-6.178632484870436E-17,"y":0.0},"contrast":0.0,"topRight":{"x":1.0,"y":0.0}}},"firstName":{"localized":{"en_US":"Miguel"},"preferredLocale":{"country":"US","language":"en"}},"profilePicture":{"displayImage":"urn:li:digitalmediaAsset:C4E03AQEmhyl0HXzfGQ","created":1505332528742,"lastModified":1505332528742,"photoFilterEditInfo":{"bottomLeft":{"x":-6.178632484870436E-17,"y":1.0},"saturation":0.0,"brightness":0.0,"vignette":0.0,"photoFilterType":"ORIGINAL","bottomRight":{"x":1.0,"y":1.0},"topLeft":{"x":-6.178632484870436E-17,"y":0.0},"contrast":0.0,"topRight":{"x":1.0,"y":0.0}}},"industryId":"urn:li:industry:4","location":{"countryCode":"us","postalCode":"04768","userSelectedGeoPlaceCode":"5-2-0-2-29","standardizedLocationUrn":"urn:li:standardizedLocationKey:(us,04768)"},"id":"MpkAFJTlPY","lastModified":1524678302559,"headline":{"localized":{"en_US":"Social
+        Media Specialist at Ceres Logic"},"preferredLocale":{"country":"US","language":"en"}},"localizedFirstName":"Miguel"}'
     http_version: 
-  recorded_at: Tue, 29 Jul 2014 22:42:16 GMT
-recorded_with: VCR 2.9.2
+  recorded_at: Wed, 25 Apr 2018 17:45:51 GMT
+recorded_with: VCR 3.0.3

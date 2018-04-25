@@ -25,18 +25,30 @@ module LinkedIn
   #   @option share [String] :visibility
   #   @option share [String] :code
   #
-  # @!macro company_path_options
-  #   @param [Hash] options identifies the user profile you want
-  #   @option options [String] :domain company email domain
-  #   @option options [String] :id company ID
-  #   @option options [String] :url
-  #   @option options [String] :name company universal name
-  #   @option options [String] :is_admin list all companies that the
-  #     authenticated is an administrator of
+  # @!macro organization_path_options
+  #   @param [Hash] options identifies the organization profile you want
+  #   @option options [String] :email_domain organization email domain
+  #   @option options [String] :id organization ID
+  #   @option options [String] :urn organization URN
+  #   @option options [String] :vanity_name organization vanity name
+  #
+  # @!macro brand_path_options
+  #   @param [Hash] options identifies the brand profile you want
+  #   @option options [String] :id brand ID
+  #   @option options [String] :vanity_name brand vanity name
+  #   @option options [String] :parent_id brand's parent organization ID.
   class APIResource
 
     def initialize(connection)
       @connection = connection
+    end
+
+    def urn_to_id(urn)
+      urn.split(':').last
+    end
+
+    def id_to_urn(resource, id)
+      ['urn', 'li', resource, id].join(':')
     end
 
     protected ############################################################

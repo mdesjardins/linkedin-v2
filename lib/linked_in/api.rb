@@ -36,19 +36,13 @@ module LinkedIn
                              :group_memberships,
                              :post_group_discussion
 
-    def_delegators :@companies, :company,
-                                :company_search,
-                                :follow_company,
-                                :company_updates,
-                                :unfollow_company,
-                                :add_company_share,
-                                :company_statistics,
-                                :company_historical_follow_statistics,
-                                :company_historical_status_update_statistics,
-                                :company_updates_likes,
-                                :company_updates_comments,
-                                :organization_acls,
-                                :organization_brand
+    def_delegators :@organizations, :organizations,
+                                    :brand,
+                                    :organization_acls,
+                                    :organization_search,
+                                    :organization_page_statistics,
+                                    :organization_follower_statistics,
+                                    :organization_share_statistics
 
     def_delegators :@communications, :send_message
 
@@ -69,7 +63,7 @@ module LinkedIn
       @people = LinkedIn::People.new(@connection)
       @search = LinkedIn::Search.new(@connection)
       @groups = LinkedIn::Groups.new(@connection)
-      @companies = LinkedIn::Companies.new(@connection)
+      @organizations = LinkedIn::Organizations.new(@connection)
       @communications = LinkedIn::Communications.new(@connection)
       @share_and_social_stream = LinkedIn::ShareAndSocialStream.new(@connection)
     end

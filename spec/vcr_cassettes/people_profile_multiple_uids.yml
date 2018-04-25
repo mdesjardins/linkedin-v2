@@ -2,69 +2,100 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.linkedin.com/v1/people::(~,id=SDmkCxL2ya)?oauth2_access_token=dummy_access_token&secure-urls=true
+    uri: https://api.linkedin.com/v2/people::(me,id=SDmkCxL2ya)
     body:
       encoding: US-ASCII
       string: ''
     headers:
       X-Li-Format:
       - json
+      Authorization:
+      - Bearer dummy_access_token
       User-Agent:
-      - Faraday v0.9.0
+      - Faraday v0.10.1
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
   response:
     status:
-      code: 200
-      message: OK
+      code: 401
+      message: Unauthorized
     headers:
-      Server:
-      - Apache-Coyote/1.1
-      X-Li-Request-Id:
-      - X930HJ00RK
-      X-Li-Uuid:
-      - EPPzVs9CO3ISpUUUaQ3JUw==
-      Vary:
-      - "*"
-      X-Li-Format:
-      - json
+      X-Restli-Gateway-Error:
+      - 'true'
       Content-Type:
-      - application/json;charset=UTF-8
+      - application/json
       Date:
-      - Tue, 29 Jul 2014 23:03:52 GMT
+      - Wed, 25 Apr 2018 17:33:20 GMT
       X-Li-Fabric:
-      - PROD-ELA4
+      - prod-lva1
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
       X-Li-Pop:
-      - PROD-ELA4
+      - prod-ech2
+      X-Li-Proto:
+      - http/1.1
       Set-Cookie:
-      - lidc="b=LB66:g=95:u=37:i=1406657453:t=1406743853:s=2424976016"; Expires=Wed,
-        30 Jul 2014 18:10:53 GMT; domain=.linkedin.com; Path=/
+      - lidc="b=VB87:g=1222:u=1:i=1524677600:t=1524764000:s=AQEOr4pXjSzQWqqGU_4MNXbpFRgfF-SG"
+      X-Li-Route-Key:
+      - '"b=VB87:g=1222:u=1:i=1524677600:t=1524764000:s=AQEOr4pXjSzQWqqGU_4MNXbpFRgfF-SG"'
+      X-Li-Uuid:
+      - 1kMbCzO+KBWgnIBqmisAAA==
     body:
       encoding: UTF-8
-      string: |-
-        {
-          "_total": 2,
-          "values": [
-            {
-              "_key": "~",
-              "firstName": "Evan",
-              "id": "SDmkCxL2ya",
-              "lastName": "Morikawa"
-            },
-            {
-              "_key": "id=SDmkCxL2ya",
-              "firstName": "Evan",
-              "id": "SDmkCxL2ya",
-              "lastName": "Morikawa"
-            }
-          ]
-        }
+      string: '{"serviceErrorCode":65600,"message":"Invalid access token","status":401}'
     http_version: 
-  recorded_at: Tue, 29 Jul 2014 23:03:53 GMT
-recorded_with: VCR 2.9.2
+  recorded_at: Wed, 25 Apr 2018 17:33:20 GMT
+- request:
+    method: get
+    uri: https://api.linkedin.com/v2/people::(me,id=MpkAFJTlPY)
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Li-Format:
+      - json
+      Authorization:
+      - Bearer AQVM91zzF-bLiOfCsTi8ktxnq99l-tW9meri8F9ZEWAuHf5g1bO_Pa4p0nFwKvZ7VFdSERAnJZq3eNOq6BzDPFNIyGIy50s-7HkLq2hE5uy6HrAQrsMAQR_qZxnBrSD11g_M2sF5XB5fUHZOXEQFgFaXB0M19VUAsvsz3yg-7zMI7w9Zn_DYTLO1e2W9VEZrOgVmRNt1XBIT_pdQO7pQkKv4702yJTrIBOuhZWNLZRClPHd2RRhPf2SJeTkodbnL4xSvzcyEPpLaTPyZIVJnBcsAzYFiG_pJtyGs7x-iWbUZsYgnUVSy8Wg-5eqmvze5tuZdICIP0PJ0AVMNGOxRRiLOEh8MSg
+      User-Agent:
+      - Faraday v0.10.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      X-Restli-Gateway-Error:
+      - 'true'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 25 Apr 2018 17:45:52 GMT
+      X-Li-Fabric:
+      - prod-lva1
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Li-Pop:
+      - prod-ech2
+      X-Li-Proto:
+      - http/1.1
+      Set-Cookie:
+      - lidc="b=VB96:g=1138:u=13:i=1524678352:t=1524753072:s=AQF3UNWSqVTVvVdOFjkNm2TG0vFi8Iwx"
+      X-Li-Route-Key:
+      - '"b=VB96:g=1138:u=13:i=1524678352:t=1524753072:s=AQF3UNWSqVTVvVdOFjkNm2TG0vFi8Iwx"'
+      X-Li-Uuid:
+      - XRJLN+K+KBWwVS+4HCsAAA==
+    body:
+      encoding: UTF-8
+      string: '{"serviceErrorCode":0,"message":"Resource null does not exist","status":404}'
+    http_version: 
+  recorded_at: Wed, 25 Apr 2018 17:45:52 GMT
+recorded_with: VCR 3.0.3

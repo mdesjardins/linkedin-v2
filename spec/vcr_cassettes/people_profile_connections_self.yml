@@ -2,77 +2,51 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.linkedin.com/v1/people/~/connections?oauth2_access_token=dummy_access_token&secure-urls=true
+    uri: https://api.linkedin.com/v2/me/connections
     body:
       encoding: US-ASCII
       string: ''
     headers:
       X-Li-Format:
       - json
+      Authorization:
+      - Bearer dummy_access_token
       User-Agent:
-      - Faraday v0.9.0
+      - Faraday v0.10.1
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
   response:
     status:
-      code: 200
-      message: OK
+      code: 401
+      message: Unauthorized
     headers:
-      Server:
-      - Apache-Coyote/1.1
-      X-Li-Request-Id:
-      - ZAR1UE33AA
-      X-Li-Uuid:
-      - QAd8J1CChRMQNAnAqCsAAA==
-      Vary:
-      - "*"
-      X-Li-Format:
-      - json
+      X-Restli-Gateway-Error:
+      - 'true'
       Content-Type:
-      - application/json;charset=UTF-8
+      - application/json
       Date:
-      - Tue, 29 Jul 2014 22:42:20 GMT
+      - Wed, 25 Apr 2018 17:33:21 GMT
       X-Li-Fabric:
-      - PROD-ELA4
+      - prod-lva1
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
       X-Li-Pop:
-      - PROD-ELA4
+      - prod-ech2
+      X-Li-Proto:
+      - http/1.1
       Set-Cookie:
-      - lidc="b=LB66:g=95:u=37:i=1406657453:t=1406743853:s=2424976016"; Expires=Wed,
-        30 Jul 2014 18:10:53 GMT; domain=.linkedin.com; Path=/
+      - lidc="b=VB87:g=1222:u=1:i=1524677601:t=1524764001:s=AQEKyRAjLNsYvKbFUTJrcIyNM4H0Cgsr"
+      X-Li-Route-Key:
+      - '"b=VB87:g=1222:u=1:i=1524677601:t=1524764001:s=AQEKyRAjLNsYvKbFUTJrcIyNM4H0Cgsr"'
+      X-Li-Uuid:
+      - 8e6nXzO+KBVAo0QF4ioAAA==
     body:
       encoding: UTF-8
-      string: |-
-        {
-          "_count": 3,
-          "_start": 0,
-          "_total": 3,
-          "values": [
-            {
-              "firstName": "Evan",
-              "headline": "Architect of Experience & Builder of Bits at Proximate",
-              "lastName": "Morikawa",
-              "siteStandardProfileRequest": {"url": "https://www.linkedin.com/profile/view?id=44799966&authType=name&authToken=sDyI&trk=api*a135643*s144016*"}
-            },
-            {
-              "firstName": "Evan",
-              "headline": "Architect of Experience & Builder of Bits at Proximate",
-              "lastName": "Morikawa",
-              "siteStandardProfileRequest": {"url": "https://www.linkedin.com/profile/view?id=44799966&authType=name&authToken=sDyI&trk=api*a135643*s144016*"}
-            },
-            {
-              "firstName": "Evan",
-              "headline": "Architect of Experience & Builder of Bits at Proximate",
-              "lastName": "Morikawa",
-              "siteStandardProfileRequest": {"url": "https://www.linkedin.com/profile/view?id=44799966&authType=name&authToken=sDyI&trk=api*a135643*s144016*"}
-            }
-          ]
-        }
+      string: '{"serviceErrorCode":65600,"message":"Invalid access token","status":401}'
     http_version: 
-  recorded_at: Tue, 29 Jul 2014 22:42:21 GMT
-recorded_with: VCR 2.9.2
+  recorded_at: Wed, 25 Apr 2018 17:33:21 GMT
+recorded_with: VCR 3.0.3

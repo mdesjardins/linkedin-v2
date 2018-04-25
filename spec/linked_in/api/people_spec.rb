@@ -1,7 +1,9 @@
+require 'spec_helper'
+
 describe LinkedIn::People do
-  let(:uid) {"SDmkCxL2ya"}
-  let(:url) {"http://www.linkedin.com/in/evanmorikawa"}
-  let(:access_token) {"dummy_access_token"}
+  let(:uid) {"MpkAFJTlPY"}
+  let(:url) {"www.linkedin.com/in/miguel-santos-del-nariz"}
+  let(:access_token) {"dummy access token"}
 
   let(:api) {LinkedIn::API.new(access_token)}
 

@@ -30,7 +30,7 @@ require "linked_in/jobs"
 require "linked_in/people"
 require "linked_in/search"
 require "linked_in/groups"
-require "linked_in/companies"
+require "linked_in/organizations"
 require "linked_in/communications"
 require "linked_in/share_and_social_stream"
 

@@ -6,7 +6,7 @@ describe LinkedIn do
   end
 
   it "is independently loadable" do
-    expect { require 'linkedin-oauth2' }.not_to raise_error
+    expect { require 'linkedin-v2' }.not_to raise_error
   end
 
   describe LinkedIn::OAuth2 do
