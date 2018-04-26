@@ -10,7 +10,7 @@ http_interactions:
       X-Li-Format:
       - json
       Authorization:
-      - Bearer dummy_access_token
+      - Bearer AQVM91zzF-bLiOfCsTi8ktxnq99l-tW9meri8F9ZEWAuHf5g1bO_Pa4p0nFwKvZ7VFdSERAnJZq3eNOq6BzDPFNIyGIy50s-7HkLq2hE5uy6HrAQrsMAQR_qZxnBrSD11g_M2sF5XB5fUHZOXEQFgFaXB0M19VUAsvsz3yg-7zMI7w9Zn_DYTLO1e2W9VEZrOgVmRNt1XBIT_pdQO7pQkKv4702yJTrIBOuhZWNLZRClPHd2RRhPf2SJeTkodbnL4xSvzcyEPpLaTPyZIVJnBcsAzYFiG_pJtyGs7x-iWbUZsYgnUVSy8Wg-5eqmvze5tuZdICIP0PJ0AVMNGOxRRiLOEh8MSg
       User-Agent:
       - Faraday v0.10.1
       Accept-Encoding:
@@ -19,15 +19,15 @@ http_interactions:
       - "*/*"
   response:
     status:
-      code: 401
-      message: Unauthorized
+      code: 403
+      message: Forbidden
     headers:
       X-Restli-Gateway-Error:
       - 'true'
       Content-Type:
       - application/json
       Date:
-      - Wed, 25 Apr 2018 17:33:13 GMT
+      - Wed, 25 Apr 2018 17:49:52 GMT
       X-Li-Fabric:
       - prod-lva1
       Transfer-Encoding:
@@ -39,14 +39,15 @@ http_interactions:
       X-Li-Proto:
       - http/1.1
       Set-Cookie:
-      - lidc="b=VB87:g=1222:u=1:i=1524677593:t=1524763993:s=AQFMTnxFMgfMzHwf46Y6ROrWIOdoe9VN"
+      - lidc="b=VB96:g=1138:u=13:i=1524678592:t=1524753072:s=AQF7s1Dej79jAZo3rvT79HXoeuzi-xzj"
       X-Li-Route-Key:
-      - '"b=VB87:g=1222:u=1:i=1524677593:t=1524763993:s=AQFMTnxFMgfMzHwf46Y6ROrWIOdoe9VN"'
+      - '"b=VB96:g=1138:u=13:i=1524678592:t=1524753072:s=AQF7s1Dej79jAZo3rvT79HXoeuzi-xzj"'
       X-Li-Uuid:
-      - nyusaTG+KBVQLVLA4SoAAA==
+      - mqN8/Bm/KBWw77u94SoAAA==
     body:
       encoding: UTF-8
-      string: '{"serviceErrorCode":65600,"message":"Invalid access token","status":401}'
+      string: '{"serviceErrorCode":100,"message":"Unpermitted fields present in PARAMETER:
+        Data Processing Exception while processing fields [/secure]","status":403}'
     http_version: 
-  recorded_at: Wed, 25 Apr 2018 17:33:13 GMT
+  recorded_at: Wed, 25 Apr 2018 17:49:52 GMT
 recorded_with: VCR 3.0.3

@@ -83,7 +83,7 @@ module LinkedIn
     # @option urn [String] organization URN
     # @return [LinkedIn::Mash]
     def organization_page_statistics(options = {})
-      path = "/v2/organizationPageStatistics?q=organization&organization=#{options.delete(:urn)}"
+      path = "/organizationPageStatistics?q=organization&organization=#{options.delete(:urn)}"
       get(path, options)
     end
 
@@ -194,7 +194,7 @@ module LinkedIn
       elsif urn = options.delete(:urn)
         path += "/#{urn_to_id(urn)}"
       elsif vanity_name = options.delete(:vanity_name)
-        path += "/q=vanityName&vanityName=#{CGI.escape(vanity_name)}"
+        path += "?q=vanityName&vanityName=#{CGI.escape(vanity_name)}"
       else
         path += "/me"
       end
@@ -206,7 +206,7 @@ module LinkedIn
       if id = options.delete(:id)
         path += "/#{id}"
       elsif vanity_name = options.delete(:vanity_name)
-        path += "/q=vanityName&vanityName=#{CGI.escape(vanity_name)}"
+        path += ">q=vanityName&vanityName=#{CGI.escape(vanity_name)}"
       elsif parent_id = options.delete(:parent_id)
         path = "/organizations?q=parentOrganization&parent=#{CGI.escape(parent_id)}"
       else

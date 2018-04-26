@@ -2,55 +2,6 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.linkedin.com/v2/people/url=http:%2F%2Fwww.linkedin.com%2Fin%2Fevanmorikawa
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      X-Li-Format:
-      - json
-      Authorization:
-      - Bearer dummy_access_token
-      User-Agent:
-      - Faraday v0.10.1
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 401
-      message: Unauthorized
-    headers:
-      X-Restli-Gateway-Error:
-      - 'true'
-      Content-Type:
-      - application/json
-      Date:
-      - Wed, 25 Apr 2018 17:33:19 GMT
-      X-Li-Fabric:
-      - prod-lva1
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      X-Li-Pop:
-      - prod-ech2
-      X-Li-Proto:
-      - http/1.1
-      Set-Cookie:
-      - lidc="b=VB87:g=1222:u=1:i=1524677599:t=1524763999:s=AQFwN89LDw7B87bxv-pUC-Lb43augHWM"
-      X-Li-Route-Key:
-      - '"b=VB87:g=1222:u=1:i=1524677599:t=1524763999:s=AQFwN89LDw7B87bxv-pUC-Lb43augHWM"'
-      X-Li-Uuid:
-      - JaMEzDK+KBVwlm1i4ioAAA==
-    body:
-      encoding: UTF-8
-      string: '{"serviceErrorCode":65600,"message":"Invalid access token","status":401}'
-    http_version: 
-  recorded_at: Wed, 25 Apr 2018 17:33:19 GMT
-- request:
-    method: get
     uri: https://api.linkedin.com/v2/people/url=www.linkedin.com%2Fin%2Fmiguel-santos-del-nariz
     body:
       encoding: US-ASCII
@@ -90,14 +41,14 @@ http_interactions:
       X-Li-Proto:
       - http/1.1
       Set-Cookie:
-      - lidc="b=VB96:g=1138:u=13:i=1524678351:t=1524753072:s=AQHka97x97CwQdntUgn1IB4Ncgqpf8WC"
+      - lidc="b=VB96:g=1138:u=13:i=1524678593:t=1524753072:s=AQEaO4U6bUgZ5gyy7e3nJIXSsiNQi1F_"
       X-Li-Route-Key:
-      - '"b=VB96:g=1138:u=13:i=1524678351:t=1524753072:s=AQHka97x97CwQdntUgn1IB4Ncgqpf8WC"'
+      - '"b=VB96:g=1138:u=13:i=1524678593:t=1524753072:s=AQEaO4U6bUgZ5gyy7e3nJIXSsiNQi1F_"'
       X-Li-Uuid:
-      - ziL/CuK+KBWw8MVOXCsAAA==
+      - TLCsUhq/KBUwGVvYOisAAA==
     body:
       encoding: UTF-8
       string: '{"message":"INTERNAL SERVER ERROR","status":500}'
     http_version: 
-  recorded_at: Wed, 25 Apr 2018 17:45:52 GMT
+  recorded_at: Wed, 25 Apr 2018 17:49:53 GMT
 recorded_with: VCR 3.0.3

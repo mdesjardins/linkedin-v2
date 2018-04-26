@@ -36,7 +36,7 @@ module LinkedIn
                              :group_memberships,
                              :post_group_discussion
 
-    def_delegators :@organizations, :organizations,
+    def_delegators :@organizations, :organization,
                                     :brand,
                                     :organization_acls,
                                     :organization_search,

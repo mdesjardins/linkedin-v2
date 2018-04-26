@@ -3,7 +3,7 @@ require 'spec_helper'
 describe LinkedIn::People do
   let(:uid) {"MpkAFJTlPY"}
   let(:url) {"www.linkedin.com/in/miguel-santos-del-nariz"}
-  let(:access_token) {"dummy access token"}
+  let(:access_token) {"AQVM91zzF-bLiOfCsTi8ktxnq99l-tW9meri8F9ZEWAuHf5g1bO_Pa4p0nFwKvZ7VFdSERAnJZq3eNOq6BzDPFNIyGIy50s-7HkLq2hE5uy6HrAQrsMAQR_qZxnBrSD11g_M2sF5XB5fUHZOXEQFgFaXB0M19VUAsvsz3yg-7zMI7w9Zn_DYTLO1e2W9VEZrOgVmRNt1XBIT_pdQO7pQkKv4702yJTrIBOuhZWNLZRClPHd2RRhPf2SJeTkodbnL4xSvzcyEPpLaTPyZIVJnBcsAzYFiG_pJtyGs7x-iWbUZsYgnUVSy8Wg-5eqmvze5tuZdICIP0PJ0AVMNGOxRRiLOEh8MSg"}
 
   let(:api) {LinkedIn::API.new(access_token)}
 
