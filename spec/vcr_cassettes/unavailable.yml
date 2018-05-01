@@ -1,0 +1,99 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.linkedin.com/uas/oauth2/accessToken
+    body:
+      encoding: UTF-8
+      string: client_id=dummy_client_id&client_secret=dummy_client_secret&code=dummy_code&grant_type=authorization_code&raise_errors=true&redirect_uri=http%3A%2F%2Flvh.me%3A5000
+    headers:
+      User-Agent:
+      - Faraday v0.10.1
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 503
+      message: Service Unavailable
+    headers:
+      Server:
+      - Apache-Coyote/1.1
+      P3p:
+      - CP="CAO CUR ADM DEV PSA PSD OUR"
+      Vary:
+      - Accept-Encoding
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Language:
+      - en-US
+      Content-Length:
+      - '249'
+      Date:
+      - Tue, 01 May 2018 14:17:44 GMT
+      X-Fs-Uuid:
+      - 88cc2025028b2a1580055102952b0000
+      Strict-Transport-Security:
+      - max-age=2592000
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Security-Policy:
+      - 'default-src *; connect-src ''self'' static.licdn.com media.licdn.com static-exp1.licdn.com
+        static-exp2.licdn.com media-exp1.licdn.com media-exp2.licdn.com https://media-src.linkedin.com/media/
+        wss://www.linkedin.com s.c.lnkd.licdn.com m.c.lnkd.licdn.com; img-src data:
+        blob: *; font-src data: *; style-src ''unsafe-inline'' ''self'' static-src.linkedin.com
+        *.licdn.com; script-src ''report-sample'' ''unsafe-inline'' ''unsafe-eval''
+        ''self'' platform.linkedin.com spdy.linkedin.com static-src.linkedin.com *.ads.linkedin.com
+        *.licdn.com; object-src ''none''; media-src blob: *; frame-ancestors ''self'';
+        report-uri https://www.linkedin.com/lite/contentsecurity?f=lg'
+      X-Li-Fabric:
+      - prod-lva1
+      Set-Cookie:
+      - _lipt=deleteMe; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/
+      - bcookie="v=2&5eca1067-c9fc-4253-8d4f-abbe4451dac5"; domain=.linkedin.com;
+        Path=/; Expires=Fri, 01-May-2020 01:55:17 GMT
+      - bscookie="v=1&20180501141745e57780ac-449e-466a-8bcb-e5ea469fb1c3AQGX-05lzF_l_d-0ceYHTr37MavN83VR";
+        domain=.www.linkedin.com; Path=/; Secure; Expires=Fri, 01-May-2020 01:55:17
+        GMT; HttpOnly
+      - lang="v=2&lang=en-us"; Version=1; Domain=linkedin.com; Path=/
+      - leo_auth_token="GST:8GtYWBFOqlyItGxn4jtMtDiuSmP2qpcnxPpypIFWWFDf2HI1Ddok45:1525184265:3ac0521bc247a538a4f7e4511df26dea1905c307";
+        Version=1; Max-Age=1799; Expires=Tue, 01-May-2018 14:47:44 GMT; Path=/
+      - lidc="b=VB45:g=1405:u=1:i=1525184265:t=1525270665:s=AQG1O3Vt-0sVbfCquDXQL5c1R8vBSGRj";
+        Expires=Wed, 02 May 2018 14:17:45 GMT; domain=.linkedin.com; Path=/
+      - s_leo_auth_token="delete me"; Version=1; Max-Age=0; Expires=Thu, 01-Jan-1970
+        00:00:10 GMT; Path=/
+      - sl="delete me"; Version=1; Domain=.www.linkedin.com; Max-Age=0; Expires=Thu,
+        01-Jan-1970 00:00:10 GMT; Path=/
+      - sl="delete me"; Version=1; Max-Age=0; Expires=Thu, 01-Jan-1970 00:00:10 GMT;
+        Path=/
+      - visit="v=1&G"; Version=1; Max-Age=63072000; Expires=Thu, 30-Apr-2020 14:17:45
+        GMT; Path=/
+      X-Li-Proto:
+      - http/1.1
+      - http/1.1
+      Pragma:
+      - no-cache
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Cache-Control:
+      - no-cache, no-store
+      Connection:
+      - keep-alive
+      X-Li-Pop:
+      - prod-ech2
+      X-Li-Uuid:
+      - j4R5JAKLKhUQs5wqlisAAA==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error_description":"the authorization server is currently unable
+        to handle the request : RestException{_response=RestResponse[headers={Content-Length=9511,
+        Content-Type=application/json, X-RestLi-Error-Response=true, X-RestLi-Protocol-Version=2.0.0}cookies=[],status=404,entityLength=9511]}
+        ","error":"temporarily_unavailable"}'
+    http_version: 
+  recorded_at: Tue, 01 May 2018 14:17:45 GMT
+recorded_with: VCR 3.0.3

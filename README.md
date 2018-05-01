@@ -1,5 +1,18 @@
 # LinkedIn v2
 
+## WARNING: DANGER WILL ROBINSON
+
+This is very much a work in progress. Currently only the shares/social stream
+and organization related endpoints have been verified to work. Having said that,
+those endpoints are using this gem in a production application, so they're
+reliable enough. :)
+
+Many endpoints still need to be written, and as I don't have the requisite partner
+status w/ LinkedIn, I can't develop against the jobs API. Many of the specs still
+fail. *Caveat emptor*
+
+## NOW BACK TO YOUR REGULARLY SCHEDULED PROGRAMMING
+
 Ruby wrapper for v2 if the [LinkedIn API](http://developer.linkedin.com). This gem is entirely
 based on emorikawa's excellent [linkedin-oauth2](https://github.com/emorikawa/linkedin-oauth2)
 gem.
@@ -12,7 +25,7 @@ If you are using OAuth 2.0 and the v1 LinkedIn API, see [emorikawa/linkedin-oaut
 In Bundler:
 
 ```ruby
-gem "linkedin-v2", "~> 1.0"
+gem "linkedin-v2", "~> 0.1.0"
 ```
 
 Otherwise:
@@ -142,249 +155,63 @@ Your access token encodes the permissions you're allowed to have. See Step
 
 ### People
 
-See the Profiles of yourself and other users. See the connections of
-yourslef and other users.
+## TBD
 
-See https://developer.linkedin.com/documents/people
+### Organizations
 
-```ruby
-api = LinkedIn::API.new(access_token)
-```
+Detailed overviews of Organizations
 
-
-# TODO: Below will need to be entirely rewritten :/
-
-#### Yourself
+See https://developer.linkedin.com/docs/guide/v2/organizations
 
 ```ruby
-me = api.profile
-```
-
-#### Others
-
-```ruby
-evan_morikawa = api.profile("SDmkCxL2ya")
-evan_morikawa = api.profile(id: "SDmkCxL2ya")
-evan_morikawa = api.profile(url: "http://www.linkedin.com/in/evanmorikawa")
-```
-
-#### Specific Fields
-
-See [available fields here](https://developer.linkedin.com/documents/profile-fields)
-
-```ruby
-my_name = api.profile(fields: ["first-name", "last-name"])
-my_job_titles = api.profile(fields: ["id", {"positions" => ["title"]}])
-```
-
-#### Multiple People
-
-```ruby
-me_and_others = api.profile(ids: ["self", "SDmkCxL2ya"])
-```
-
-#### Connections
-
-```ruby
-# Takes the same arguments as `LinkedIn::API#profile`
-my_connections = api.connections
-evans_connections = api.connections(id: "SDmkCxL2ya")
-```
-
-#### New Connections
-
-```ruby
-# Takes the same options argument as `LinkedIn::API#connections`
-since = Time.new(2014,1,1)
-my_new_connections = api.connections(since)
-evans_new_connections = api.connections(since, id: "SDmkCxL2ya")
-```
-
-### People Search
-
-Search through People
-
-See https://developer.linkedin.com/documents/people-search-api
-
-```ruby
-api.search
-api.search("Proximate")
-api.search(keywords: "Proximate Olin")
-api.search(keywords: "Proximate Olin", start: 10, count: 20)
-api.search(school_name: "Olin College of Engineering")
-
-api.search(fields: {facets: ["code", {buckets: ["code", "name"]}] },
-                    facets: "location")
-
-# Identify all 1st degree connections living in the San Francisco Bay Area
-# See https://developer.linkedin.com/documents/people-search-api#Facets
-api.search(fields: {facets: ["code", {buckets: ["code", "name", "count"]}]},
-           facets: "location,network",
-           facet: ["location,us:84", "network,F"])
-```
-
-### Groups
-
-Access and interact with LinkedIn Groups
-
-You need the "rw_groups" permission for most group actions
-
-See https://developer.linkedin.com/documents/groups
-
-```ruby
-# My groups
-api.group_suggestions
-api.group_memberships
-
-# Another group
-api.group_profile(id: 12345)
-api.group_posts(id: 12345, count: 10, start: 10)
-
-# Participate
-api.add_group_share(12345, title: "Hi")
-
-api.join_group(12345)
-```
-
-### Companies
-
-Detailed overviews of Company information
-
-See https://developer.linkedin.com/documents/companies
-
-```ruby
-# Company info
-api.company(name: "google")
-api.company(id: 12345)
-api.company_updates(name: "google")
-api.company_statistics(name: "google")
-
-# Info on a particular company update
-api.company_update_comments(1337, name: "google")
-api.company_update_likes(1337, name: "google")
-
-# Follow/unfollow
-api.follow_company(12345)
-api.unfollow_company(12345)
-
-# Need rw_company_admin
-api.add_company_share(12345, content: "Hi")
+# Organization info
+api.organization(name: "google")
+api.organization(id: 12345)
+api.organization(urn: 'urn:li:organization:12345')
 ```
 
 ### Jobs
 
-A search for Jobs on LinkedIn
-
-See https://developer.linkedin.com/documents/jobs
-
-```ruby
-# Find a job
-api.job(id: 12345)
-
-# Your jobs
-api.job_bookmarks
-api.job_suggestions
-api.add_job_bookmark(12345)
+## DON'T HAVE ACCESS. :(
 ```
 
 ### Share and Social Stream
 
 View and update content on social streams
 
-See https://developer.linkedin.com/documents/share-and-social-stream
+See https://developer.linkedin.com/docs/guide/v2/shares
 
 ```ruby
 # Your news feed
-api.network_updates
 api.shares
 
-api.add_share(content: "hi")
-api.update_comment(12345, content: "hi")
+api.share(content: "hi")
 
 # For a particular feed item
-api.share_comments(12345)
-api.share_likes(12345)
+api.comments(urn: "urn:li:article:12345")
+api.likes(urn: "urn:li:article:12345")
 
-api.like_share(12345)
-api.unlike_share(12345)
+api.like(urn: "urn:li:activity:12345")
+api.unlike(urn: "urn:li:activity:12345")
 ```
 
 ### Communications
 
-Invitations and messages between connections apis
-
-See https://developer.linkedin.com/documents/communications
-
-```ruby
-# Need w_messages permissions
-
-api.send_message("Subject", "Body", ["user1234", "user3456"])
-```
+## TBD
 
 # Documentation
 
-On [RubyDoc here](http://rubydoc.info/github/emorikawa/linkedin-oauth2/frames/file/README.md)
+On [RubyDoc here](http://rubydoc.info/github/mdesjardins/linkedin-v2/frames/file/README.md)
 
-Read the source for [LinkedIn::API](https://github.com/emorikawa/linkedin-oauth2/blob/master/lib/linked_in/api.rb) and [LinkedIn::OAuth2](https://github.com/emorikawa/linkedin-oauth2/blob/master/lib/linked_in/oauth2.rb)
-
-# Upgrading
-
-v1.0 of linkedin-oauth2 is a near complete re-write of the gem. Its
-primary goals were to:
-
-* Better isolate OAuth 2.0 logic
-* Better documentation around OAuth 2.0
-* Build on top of [Faraday](https://github.com/lostisland/faraday)
-* Modularize the API Endpoints
-* Better cover LinkedIn's vast API & audit deprecated actions
-* Achieve near perfect test coverage & code quality
-
-There are two places you may be upgrading from:
-
-1. oauth2-v0.1 of this linkedin-oauth2 gem
-2. [hexgnu/linkedin](https://github.com/hexgnu/linkedin) OAuth 1.0 gem
-
-### From oauth2-v0.1.0 of linkedin-oauth2
-
-See the [README from oauth2-v0.1](https://github.com/emorikawa/linkedin-oauth2/blob/395540d029156f29d0e53f588feb31f279aa5d70/README.markdown)
-
-* The OAuth portion has substantially changed. There should be no changes
-  for the signature of API calls or the response hashes
-* Some of the API calls in the oauth2-v0.1 were actually broken in the
-  initial OAuth2.0 transition. Those have now been fixed.
-* Instead of a single `LinkedIn::Client` object there are now two separate
-  major objects.
-
-  1. `LinkedIn::OAuth2` for performing authentication
-  1. `LinkedIn::API` for accessing the API
-
-* Requests used to be done through the `OAuth2::AccessToken` object. Now
-  they are done through `LinkedIn::Connection`, which is a thin subclass of
-  `Faraday::Connection`. This is composed into the main `LinkedIn::API`
-  object.
-
-### From hexgnu/linkedin OAuth 1.0
-
-* OAuth 2.0 is substantially different then OAuth 1.0
-* The actual API methods, arguments, and return values were designed to
-  look the same as hexgnu/linkedin. You should only have to swap out the
-  Authentication and API client construction.
-* There is no more `consumer` object. Everything in OAuth 2.0 is centered
-  around acquiring an **Access Token**. Use the new `LinkedIn::OAuth2`
-  class to acquire the token.
-* There is no more single `client` object. The equivalent is the
-  `LinkedIn::API` object. The `LinkedIn::API` object only needs an access
-  token to work
-* Requests used to be done through an `OAuth::AccessToken` object. Now
-  they are done through `LinkedIn::Connection`, which is a thin subclass of
-  `Faraday::Connection`. This means that you have the full power and
-  method signatures of Faraday at your disposal.
+Read the source for [LinkedIn::API](https://github.com/mdesjardins/linkedin-v2/blob/master/lib/linked_in/api.rb) and [LinkedIn::OAuth2](https://github.com/mdesjardins/linkedin-v2/blob/master/lib/linked_in/oauth2.rb)
 
 # Contributing
 
-Please see [CONTRIBUTING.md](https://github.com/emorikawa/linkedin-oauth2/blob/master/CONTRIBUTING.md) for details.
+Please see [CONTRIBUTING.md](https://github.com/mdesjardins/linkedin-v2/blob/master/CONTRIBUTING.md) for details.
 
 # Credits
+Huge, huge props to Evan Morikawa for writing the v1 version of this gem. This gem is
+pretty much all of that work, but gutted and replaced with v2 endpoints.
 
 * [Evan Morikawa](https://twitter.com/eom) ([emorikawa](https://github.com/emorikawa))
 * [Matt Kirk](http://matthewkirk.com) ([hexgnu](https://github.com/hexgnu))
@@ -394,5 +221,4 @@ Please see [CONTRIBUTING.md](https://github.com/emorikawa/linkedin-oauth2/blob/m
 * And Many More [Contributors](https://github.com/emorikawa/linkedin-oauth2/graphs/contributors)
 
 # License
-
-Copyright :copyright: 2014-present [Evan Morikawa](https://twitter.com/e0m) 2013-2014 [Matt Kirk](http://matthewkirk.com/) 2009-11 [Wynn Netherland](http://wynnnetherland.com/) and [contributors](https://github.com/emorikawa/linkedin-oauth2/graphs/contributors). It is free software, and may be redistributed under the terms specified in the MIT-LICENSE file. See [LICENSE](https://github.com/emorikawa/linkedin-oauth2/blob/master/LICENSE) for details.
+Copyright :copyright: 2018-present [Mike Desjardins](https://twitter.com/mdesjardins) 2014-2018 [Evan Morikawa](https://twitter.com/e0m) 2013-2014 [Matt Kirk](http://matthewkirk.com/) 2009-11 [Wynn Netherland](http://wynnnetherland.com/) and [contributors](https://github.com/emorikawa/linkedin-oauth2/graphs/contributors). It is free software, and may be redistributed under the terms specified in the MIT-LICENSE file. See [LICENSE](https://github.com/emorikawa/linkedin-oauth2/blob/master/LICENSE) for details.

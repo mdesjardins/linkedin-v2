@@ -29,10 +29,11 @@ require "linked_in/api_resource"
 require "linked_in/jobs"
 require "linked_in/people"
 require "linked_in/search"
-require "linked_in/groups"
+# require "linked_in/groups" not supported by v2 API?
 require "linked_in/organizations"
 require "linked_in/communications"
 require "linked_in/share_and_social_stream"
+require 'linked_in/media'
 
 # The primary API object that makes requests.
 # It composes in all of the endpoints

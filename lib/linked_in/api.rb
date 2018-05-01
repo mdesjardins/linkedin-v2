@@ -15,10 +15,12 @@ module LinkedIn
     end
 
     extend Forwardable # Composition over inheritance
-    def_delegators :@jobs, :job,
-                           :job_bookmarks,
-                           :job_suggestions,
-                           :add_job_bookmark
+
+    # I do not have access to the jobs related endpoints.
+    # def_delegators :@jobs, :job,
+    #                        :job_bookmarks,
+    #                        :job_suggestions,
+    #                        :add_job_bookmark
 
     def_delegators :@people, :profile,
                              :skills,
@@ -28,13 +30,14 @@ module LinkedIn
 
     def_delegators :@search, :search
 
-    def_delegators :@groups, :join_group,
-                             :group_posts,
-                             :group_profile,
-                             :add_group_share,
-                             :group_suggestions,
-                             :group_memberships,
-                             :post_group_discussion
+    # Not part of v2??
+    # def_delegators :@groups, :join_group,
+    #                          :group_posts,
+    #                          :group_profile,
+    #                          :add_group_share,
+    #                          :group_suggestions,
+    #                          :group_memberships,
+    #                          :post_group_discussion
 
     def_delegators :@organizations, :organization,
                                     :brand,
@@ -48,13 +51,15 @@ module LinkedIn
 
     def_delegators :@share_and_social_stream, :shares,
                                               :share,
-                                              :add_share,
-                                              :like_share,
-                                              :share_likes,
-                                              :unlike_share,
-                                              :share_comments,
-                                              :update_comment,
-                                              :network_updates
+                                              :likes,
+                                              :like,
+                                              :unlike,
+                                              :comments,
+                                              :comment
+                                              # :update_comment,
+                                              # :network_updates
+
+    def_delegators :@media, :summary
 
     private ##############################################################
 
@@ -62,10 +67,11 @@ module LinkedIn
       @jobs = LinkedIn::Jobs.new(@connection)
       @people = LinkedIn::People.new(@connection)
       @search = LinkedIn::Search.new(@connection)
-      @groups = LinkedIn::Groups.new(@connection)
+      # @groups = LinkedIn::Groups.new(@connection) not supported by v2 API?
       @organizations = LinkedIn::Organizations.new(@connection)
       @communications = LinkedIn::Communications.new(@connection)
       @share_and_social_stream = LinkedIn::ShareAndSocialStream.new(@connection)
+      @media = LinkedIn::Media.new(@connection)
     end
 
     def default_params

@@ -16,7 +16,7 @@ module LinkedIn
       when 500
         raise LinkedIn::InformLinkedInError.new(data),
           "LinkedIn had an internal error. Please let them know in the forum. (#{data.status}): #{data.message}"
-      when 502..503
+      when 502..504
         raise LinkedIn::UnavailableError.new(data), "(#{data.status}): #{data.message}"
       else
         super

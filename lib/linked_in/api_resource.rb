@@ -57,8 +57,7 @@ module LinkedIn
       url, params, headers = prepare_connection_params(path, options)
 
       response = @connection.get(url, params, headers)
-
-      return Mash.from_json(response.body)
+      Mash.from_json(response.body)
     end
 
     def post(path=nil, body=nil, headers=nil, &block)
@@ -67,10 +66,15 @@ module LinkedIn
 
     def put(path=nil, body=nil, headers=nil, &block)
       @connection.put(prepend_prefix(path), body, headers, &block)
+      Mash.from_json(response.body)
     end
 
-    def delete(path=nil, params=nil, headers=nil, &block)
-      @connection.delete(prepend_prefix(path), params, headers, &block)
+    def delete(path=nil, body=nil, headers=nil, &block)
+      # @connection.delete(prepend_prefix(path), params, headers, &block)
+      # To be able to DELETE with a body:
+      reponse = @connection.run_request(:delete, prepend_prefix(path), body, headers, &block)
+
+      Mash.from_json(response.body)
     end
 
     def deprecated

@@ -17,7 +17,6 @@ module LinkedIn
       # the same param to certain endpoints (like the search API).
       self.options.params_encoder = ::Faraday::FlatParamsEncoder
 
-
       logger = Logger.new $stderr
       logger.level = Logger::DEBUG
       self.response :logger, logger
