@@ -8,8 +8,11 @@ module LinkedIn
       verify_access_token!(access_token)
       @access_token = access_token
 
-      @connection = LinkedIn::Connection.new params: default_params,
-                                             headers: default_headers
+      @connection =
+        LinkedIn::Connection.new params: default_params, headers: default_headers do |conn|
+        conn.request :multipart
+        conn.adapter Faraday.default_adapter
+      end
 
       initialize_endpoints
     end
@@ -56,10 +59,9 @@ module LinkedIn
                                               :unlike,
                                               :comments,
                                               :comment
-                                              # :update_comment,
-                                              # :network_updates
 
-    def_delegators :@media, :summary
+    def_delegators :@media, :summary,
+                            :upload
 
     private ##############################################################
 
@@ -67,11 +69,11 @@ module LinkedIn
       @jobs = LinkedIn::Jobs.new(@connection)
       @people = LinkedIn::People.new(@connection)
       @search = LinkedIn::Search.new(@connection)
-      # @groups = LinkedIn::Groups.new(@connection) not supported by v2 API?
       @organizations = LinkedIn::Organizations.new(@connection)
       @communications = LinkedIn::Communications.new(@connection)
       @share_and_social_stream = LinkedIn::ShareAndSocialStream.new(@connection)
       @media = LinkedIn::Media.new(@connection)
+      # @groups = LinkedIn::Groups.new(@connection) not supported by v2 API?
     end
 
     def default_params

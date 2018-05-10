@@ -27,7 +27,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Tue, 01 May 2018 14:17:30 GMT
+      - Thu, 10 May 2018 16:18:15 GMT
       X-Li-Fabric:
       - prod-lva1
       Transfer-Encoding:
@@ -35,17 +35,17 @@ http_interactions:
       Connection:
       - keep-alive
       X-Li-Pop:
-      - prod-edc2
+      - prod-ech2
       X-Li-Proto:
       - http/1.1
       X-Li-Uuid:
-      - 2OAVov6KKhXAKU2piisAAA==
+      - d7JNlc5ULRUgdJtWCSsAAA==
       Set-Cookie:
-      - lidc="b=VB17:g=1697:u=1:i=1525184250:t=1525270650:s=AQG1i0-x5NI4UE0yKGSSlmGeQMDgyeoA";
-        Expires=Wed, 02 May 2018 14:17:30 GMT; domain=.linkedin.com; Path=/
+      - lidc="b=VB28:g=1577:u=1:i=1525969095:t=1526055495:s=AQHbZ-P9DsU9WiZl4409KwszUggU2G1a";
+        Expires=Fri, 11 May 2018 16:18:15 GMT; domain=.linkedin.com; Path=/
     body:
       encoding: UTF-8
       string: '{"serviceErrorCode":65600,"message":"Invalid access token","status":401}'
     http_version: 
-  recorded_at: Tue, 01 May 2018 14:17:30 GMT
+  recorded_at: Thu, 10 May 2018 16:18:15 GMT
 recorded_with: VCR 3.0.3

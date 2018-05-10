@@ -2,10 +2,10 @@
 
 ## WARNING: DANGER WILL ROBINSON
 
-This is very much a work in progress. Currently only the shares/social stream
-and organization related endpoints have been verified to work. Having said that,
-those endpoints are using this gem in a production application, so they're
-reliable enough. :)
+This is very much a work in progress. Currently only the shares/social stream,
+organization, and media upload related endpoints have been verified to work.
+Having said that, those endpoints are using this gem in a production application,
+so they're reliable enough. :)
 
 Many endpoints still need to be written, and as I don't have the requisite partner
 status w/ LinkedIn, I can't develop against the jobs API. Many of the specs still

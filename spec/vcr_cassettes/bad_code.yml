@@ -33,9 +33,9 @@ http_interactions:
       Content-Length:
       - '249'
       Date:
-      - Tue, 01 May 2018 14:17:44 GMT
+      - Thu, 10 May 2018 16:18:31 GMT
       X-Fs-Uuid:
-      - 4ea6a43b028b2a1510635f10032b0000
+      - 5a690092d2542d15006080a77b2b0000
       Strict-Transport-Security:
       - max-age=2592000
       X-Content-Type-Options:
@@ -55,23 +55,23 @@ http_interactions:
       - prod-lva1
       Set-Cookie:
       - _lipt=deleteMe; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/
-      - bcookie="v=2&cddc5842-8ac1-40be-8051-2e3e98f9c0c8"; domain=.linkedin.com;
-        Path=/; Expires=Fri, 01-May-2020 01:55:17 GMT
-      - bscookie="v=1&2018050114174590478047-e07b-4d00-8c27-982afedc45deAQEsbZz-cnu6aaApudE86HNqsbh-VKak";
-        domain=.www.linkedin.com; Path=/; Secure; Expires=Fri, 01-May-2020 01:55:17
+      - bcookie="v=2&f2d8db8b-5eab-4586-8930-a111b4164eef"; domain=.linkedin.com;
+        Path=/; Expires=Sun, 10-May-2020 03:56:04 GMT
+      - bscookie="v=1&20180510161832d8f051d0-c2c1-4b5b-8ec2-e2ad1becd1a1AQEPkaCgZ-qb5YmlWRBi2sEN-Dxgcjbz";
+        domain=.www.linkedin.com; Path=/; Secure; Expires=Sun, 10-May-2020 03:56:04
         GMT; HttpOnly
       - lang="v=2&lang=en-us"; Version=1; Domain=linkedin.com; Path=/
-      - leo_auth_token="GST:UYc_4AhwNzUOeZKN5j6EoJHHo3lOXlfQnv_lliH-MQUO2zA0aOt1GP:1525184265:3b2083ec3dafeaa73166b385b5047fed69d4c376";
-        Version=1; Max-Age=1799; Expires=Tue, 01-May-2018 14:47:44 GMT; Path=/
-      - lidc="b=VB88:g=1230:u=1:i=1525184265:t=1525270665:s=AQG1hoFytmuJ4bX6yweMD8dsESg_j4id";
-        Expires=Wed, 02 May 2018 14:17:45 GMT; domain=.linkedin.com; Path=/
+      - leo_auth_token="GST:8wepTSM4Iof7e1yTvxqFinOiFeU9t5pc6h7PVzOvujU79O-Q6_tXoV:1525969112:9f1024b4a3f55b03573cd2cef353f8148fcc4ce4";
+        Version=1; Max-Age=1799; Expires=Thu, 10-May-2018 16:48:31 GMT; Path=/
+      - lidc="b=VB15:g=1647:u=1:i=1525969112:t=1526055512:s=AQHZcHLVWCKhnX9QALwFyNhJgvdY4T-F";
+        Expires=Fri, 11 May 2018 16:18:32 GMT; domain=.linkedin.com; Path=/
       - s_leo_auth_token="delete me"; Version=1; Max-Age=0; Expires=Thu, 01-Jan-1970
         00:00:10 GMT; Path=/
       - sl="delete me"; Version=1; Domain=.www.linkedin.com; Max-Age=0; Expires=Thu,
         01-Jan-1970 00:00:10 GMT; Path=/
       - sl="delete me"; Version=1; Max-Age=0; Expires=Thu, 01-Jan-1970 00:00:10 GMT;
         Path=/
-      - visit="v=1&G"; Version=1; Max-Age=63072000; Expires=Thu, 30-Apr-2020 14:17:45
+      - visit="v=1&G"; Version=1; Max-Age=63072000; Expires=Sat, 09-May-2020 16:18:32
         GMT; Path=/
       X-Li-Proto:
       - http/1.1
@@ -85,9 +85,9 @@ http_interactions:
       Connection:
       - keep-alive
       X-Li-Pop:
-      - prod-edc2
+      - prod-ech2
       X-Li-Uuid:
-      - BYMxOwKLKhWAF4VFAysAAA==
+      - hMMwkdJULRUQ6tGnfCsAAA==
     body:
       encoding: ASCII-8BIT
       string: '{"error_description":"the authorization server is currently unable
@@ -95,5 +95,5 @@ http_interactions:
         Content-Type=application/json, X-RestLi-Error-Response=true, X-RestLi-Protocol-Version=2.0.0}cookies=[],status=404,entityLength=9511]}
         ","error":"temporarily_unavailable"}'
     http_version: 
-  recorded_at: Tue, 01 May 2018 14:17:45 GMT
+  recorded_at: Thu, 10 May 2018 16:18:32 GMT
 recorded_with: VCR 3.0.3

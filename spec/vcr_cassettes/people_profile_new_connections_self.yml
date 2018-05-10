@@ -27,7 +27,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Tue, 01 May 2018 14:17:37 GMT
+      - Thu, 10 May 2018 16:18:22 GMT
       X-Li-Fabric:
       - prod-lva1
       Transfer-Encoding:
@@ -39,14 +39,14 @@ http_interactions:
       X-Li-Proto:
       - http/1.1
       Set-Cookie:
-      - lidc="b=VB96:g=1148:u=15:i=1525184257:t=1525268970:s=AQF2lD6fKpyz8FQtLsc_SOX3nnWs8FVQ"
+      - lidc="b=VB96:g=1157:u=18:i=1525969102:t=1526048328:s=AQHUUC-2Fn8U2-xzVbjjJtVPmskmb6lH"
       X-Li-Route-Key:
-      - '"b=VB96:g=1148:u=15:i=1525184257:t=1525268970:s=AQF2lD6fKpyz8FQtLsc_SOX3nnWs8FVQ"'
+      - '"b=VB96:g=1157:u=18:i=1525969102:t=1526048328:s=AQHUUC-2Fn8U2-xzVbjjJtVPmskmb6lH"'
       X-Li-Uuid:
-      - UTyeZQCLKhXQEO+C2CoAAA==
+      - 6WayYNBULRUADwYScisAAA==
     body:
       encoding: UTF-8
       string: '{"serviceErrorCode":0,"message":"Resource me does not exist","status":404}'
     http_version: 
-  recorded_at: Tue, 01 May 2018 14:17:37 GMT
+  recorded_at: Thu, 10 May 2018 16:18:22 GMT
 recorded_with: VCR 3.0.3
