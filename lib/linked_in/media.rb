@@ -20,15 +20,15 @@ module LinkedIn
     #
     # @options options [String] :source_url, the URL to the content to be uploaded.
     # @options options [Numeric] :timeout, optional timeout value in seconds, defaults to 300.
+    # @options options [String] :disposition_filename, the name of the file to be uploaded. Defaults to the basename of the URL filename.
     # @return [LinkedIn::Mash]
     #
     def upload(options = {})
       source_url = options.delete(:source_url)
       timeout = options.delete(:timeout) || DEFAULT_TIMEOUT_SECONDS
       media_upload_endpoint = LinkedIn.config.api + '/media/upload'
-
       response =
-        @connection.post(media_upload_endpoint, file: file(source_url)) do |req|
+        @connection.post(media_upload_endpoint, file: file(source_url, options)) do |req|
           req.headers['Accept'] = 'application/json'
           req.options.timeout = timeout
           req.options.open_timeout = timeout
@@ -50,10 +50,11 @@ module LinkedIn
       ::MIME::Types.type_for(extension(media)).first.content_type
     end
 
-    def file(source_url)
+    def file(source_url, options)
       media = open(source_url, 'rb')
       io = StringIO.new(media.read)
-      Faraday::UploadIO.new(io, content_type(media), upload_filename(media))
+      filename = options.delete(:disposition_filename) || upload_filename(media)
+      Faraday::UploadIO.new(io, content_type(media), filename)
     end
   end
 end

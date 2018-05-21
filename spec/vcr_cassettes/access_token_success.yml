@@ -8,7 +8,7 @@ http_interactions:
       string: client_id=dummy_client_id&client_secret=dummy_client_secret&code=dummy_code&grant_type=authorization_code&raise_errors=true&redirect_uri=http%3A%2F%2Flvh.me%3A5000
     headers:
       User-Agent:
-      - Faraday v0.10.1
+      - Faraday v0.12.2
       Content-Type:
       - application/x-www-form-urlencoded
       Accept-Encoding:
@@ -31,11 +31,11 @@ http_interactions:
       Content-Language:
       - en-US
       Content-Length:
-      - '249'
+      - '250'
       Date:
-      - Thu, 10 May 2018 16:18:30 GMT
+      - Mon, 21 May 2018 18:34:12 GMT
       X-Fs-Uuid:
-      - 7fbbf246d2542d1530771e94632b0000
+      - b3043c399cbc3015206fa4ea4e2b0000
       Strict-Transport-Security:
       - max-age=2592000
       X-Content-Type-Options:
@@ -55,23 +55,23 @@ http_interactions:
       - prod-lva1
       Set-Cookie:
       - _lipt=deleteMe; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/
-      - bcookie="v=2&a20f78e0-9ab5-4ae9-85dd-1700380ce00b"; domain=.linkedin.com;
-        Path=/; Expires=Sun, 10-May-2020 03:56:02 GMT
-      - bscookie="v=1&2018051016183015c08a4f-a1d2-44bf-816e-7c960f409c25AQEAwIqZSsbea_2-QkCJhoBSf55fgP2A";
-        domain=.www.linkedin.com; Path=/; Secure; Expires=Sun, 10-May-2020 03:56:02
+      - bcookie="v=2&d345bb0e-f6ab-4db4-8542-b2d8828d9ef7"; domain=.linkedin.com;
+        Path=/; Expires=Thu, 21-May-2020 06:11:44 GMT
+      - bscookie="v=1&20180521183412b52aae88-48da-4286-8db2-061da5448518AQGWqF-B9sPcwFJhUavo9sVoIjQyDp85";
+        domain=.www.linkedin.com; Path=/; Secure; Expires=Thu, 21-May-2020 06:11:44
         GMT; HttpOnly
       - lang="v=2&lang=en-us"; Version=1; Domain=linkedin.com; Path=/
-      - leo_auth_token="GST:8vAgXT5om3oeVQTyTIT_XTaTY8oRx9fbZWTkFOalyUNsynKHnSQbBA:1525969110:2707051a47df15820ce02d846137a7f57ade5f39";
-        Version=1; Max-Age=1799; Expires=Thu, 10-May-2018 16:48:29 GMT; Path=/
-      - lidc="b=VB27:g=1598:u=1:i=1525969110:t=1526055510:s=AQG_Wal_3aidvmIERcCW4KqiSyGqLUCk";
-        Expires=Fri, 11 May 2018 16:18:30 GMT; domain=.linkedin.com; Path=/
+      - leo_auth_token="GST:UyjqklGyV7ZhRm4cfodqmZVJMh81RSaxFvjAKiPYm_ZPjmJQ8751kl:1526927652:fea5cbfed9b9ee17e26498280dfcb52f7bf0da84";
+        Version=1; Max-Age=1799; Expires=Mon, 21-May-2018 19:04:11 GMT; Path=/
+      - lidc="b=VB31:g=1614:u=1:i=1526927652:t=1527014052:s=AQEyvgLLWsw0KAkIo0IRU0oyq8wudtmV";
+        Expires=Tue, 22 May 2018 18:34:12 GMT; domain=.linkedin.com; Path=/
       - s_leo_auth_token="delete me"; Version=1; Max-Age=0; Expires=Thu, 01-Jan-1970
         00:00:10 GMT; Path=/
       - sl="delete me"; Version=1; Domain=.www.linkedin.com; Max-Age=0; Expires=Thu,
         01-Jan-1970 00:00:10 GMT; Path=/
       - sl="delete me"; Version=1; Max-Age=0; Expires=Thu, 01-Jan-1970 00:00:10 GMT;
         Path=/
-      - visit="v=1&G"; Version=1; Max-Age=63072000; Expires=Sat, 09-May-2020 16:18:30
+      - visit="v=1&G"; Version=1; Max-Age=63072000; Expires=Wed, 20-May-2020 18:34:12
         GMT; Path=/
       X-Li-Proto:
       - http/1.1
@@ -85,15 +85,15 @@ http_interactions:
       Connection:
       - keep-alive
       X-Li-Pop:
-      - prod-ech2
+      - prod-edc2
       X-Li-Uuid:
-      - H7cjRtJULRUQz0M+YysAAA==
+      - JZAgOZy8MBWAld5MTisAAA==
     body:
       encoding: ASCII-8BIT
       string: '{"error_description":"the authorization server is currently unable
-        to handle the request : RestException{_response=RestResponse[headers={Content-Length=9511,
-        Content-Type=application/json, X-RestLi-Error-Response=true, X-RestLi-Protocol-Version=2.0.0}cookies=[],status=404,entityLength=9511]}
+        to handle the request : RestException{_response=RestResponse[headers={Content-Length=10592,
+        Content-Type=application/json, X-RestLi-Error-Response=true, X-RestLi-Protocol-Version=2.0.0}cookies=[],status=404,entityLength=10592]}
         ","error":"temporarily_unavailable"}'
     http_version: 
-  recorded_at: Thu, 10 May 2018 16:18:30 GMT
-recorded_with: VCR 3.0.3
+  recorded_at: Mon, 21 May 2018 18:34:12 GMT
+recorded_with: VCR 4.0.0

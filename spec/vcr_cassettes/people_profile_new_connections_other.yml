@@ -12,7 +12,7 @@ http_interactions:
       Authorization:
       - Bearer AQVM91zzF-bLiOfCsTi8ktxnq99l-tW9meri8F9ZEWAuHf5g1bO_Pa4p0nFwKvZ7VFdSERAnJZq3eNOq6BzDPFNIyGIy50s-7HkLq2hE5uy6HrAQrsMAQR_qZxnBrSD11g_M2sF5XB5fUHZOXEQFgFaXB0M19VUAsvsz3yg-7zMI7w9Zn_DYTLO1e2W9VEZrOgVmRNt1XBIT_pdQO7pQkKv4702yJTrIBOuhZWNLZRClPHd2RRhPf2SJeTkodbnL4xSvzcyEPpLaTPyZIVJnBcsAzYFiG_pJtyGs7x-iWbUZsYgnUVSy8Wg-5eqmvze5tuZdICIP0PJ0AVMNGOxRRiLOEh8MSg
       User-Agent:
-      - Faraday v0.10.1
+      - Faraday v0.12.2
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -27,7 +27,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 10 May 2018 16:18:23 GMT
+      - Mon, 21 May 2018 18:34:06 GMT
       X-Li-Fabric:
       - prod-lva1
       Transfer-Encoding:
@@ -35,18 +35,18 @@ http_interactions:
       Connection:
       - keep-alive
       X-Li-Pop:
-      - prod-ech2
+      - prod-edc2
       X-Li-Proto:
       - http/1.1
       Set-Cookie:
-      - lidc="b=VB96:g=1157:u=18:i=1525969103:t=1526048328:s=AQEdzcGp03tn57unBJInFhSQjVfGyG6k"
+      - lidc="b=VB96:g=1172:u=20:i=1526927646:t=1527014039:s=AQH70OsvZigtL0Vvbzxes8DIaiz2upjx"
       X-Li-Route-Key:
-      - '"b=VB96:g=1157:u=18:i=1525969103:t=1526048328:s=AQEdzcGp03tn57unBJInFhSQjVfGyG6k"'
+      - '"b=VB96:g=1172:u=20:i=1526927646:t=1527014039:s=AQH70OsvZigtL0Vvbzxes8DIaiz2upjx"'
       X-Li-Uuid:
-      - 5sbWd9BULRWA1iiacSsAAA==
+      - LtFO15q8MBUgPkfW1CoAAA==
     body:
       encoding: UTF-8
       string: '{"serviceErrorCode":0,"message":"Resource people does not exist","status":404}'
     http_version: 
-  recorded_at: Thu, 10 May 2018 16:18:23 GMT
-recorded_with: VCR 3.0.3
+  recorded_at: Mon, 21 May 2018 18:34:07 GMT
+recorded_with: VCR 4.0.0

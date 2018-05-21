@@ -12,7 +12,7 @@ http_interactions:
       Authorization:
       - Bearer AQVM91zzF-bLiOfCsTi8ktxnq99l-tW9meri8F9ZEWAuHf5g1bO_Pa4p0nFwKvZ7VFdSERAnJZq3eNOq6BzDPFNIyGIy50s-7HkLq2hE5uy6HrAQrsMAQR_qZxnBrSD11g_M2sF5XB5fUHZOXEQFgFaXB0M19VUAsvsz3yg-7zMI7w9Zn_DYTLO1e2W9VEZrOgVmRNt1XBIT_pdQO7pQkKv4702yJTrIBOuhZWNLZRClPHd2RRhPf2SJeTkodbnL4xSvzcyEPpLaTPyZIVJnBcsAzYFiG_pJtyGs7x-iWbUZsYgnUVSy8Wg-5eqmvze5tuZdICIP0PJ0AVMNGOxRRiLOEh8MSg
       User-Agent:
-      - Faraday v0.10.1
+      - Faraday v0.12.2
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -27,7 +27,7 @@ http_interactions:
       X-Restli-Protocol-Version:
       - 1.0.0
       Date:
-      - Thu, 10 May 2018 16:18:18 GMT
+      - Mon, 21 May 2018 18:34:01 GMT
       X-Li-Fabric:
       - prod-lva1
       Transfer-Encoding:
@@ -35,23 +35,23 @@ http_interactions:
       Connection:
       - keep-alive
       X-Li-Pop:
-      - prod-ech2
+      - prod-edc2
       X-Li-Proto:
       - http/1.1
       Set-Cookie:
-      - lidc="b=VB96:g=1157:u=18:i=1525969097:t=1526048328:s=AQFfgdQhiI7ihzGEEFXX9YowlR7uvr8q"
+      - lidc="b=VB96:g=1172:u=20:i=1526927641:t=1527014039:s=AQFnfvd17C3wntwvnDGCCgAhGHxsNmrS"
       X-Li-Route-Key:
-      - '"b=VB96:g=1157:u=18:i=1525969097:t=1526048328:s=AQFfgdQhiI7ihzGEEFXX9YowlR7uvr8q"'
+      - '"b=VB96:g=1172:u=20:i=1526927641:t=1527014039:s=AQFnfvd17C3wntwvnDGCCgAhGHxsNmrS"'
       X-Li-Uuid:
-      - D/t5Qs9ULRVQboaWCSsAAA==
+      - I0OanJm8MBWQcFrp1CoAAA==
     body:
       encoding: UTF-8
       string: '{"industryName":{"localized":{"en_US":"Public Relations"},"preferredLocale":{"country":"US","language":"en"}},"localizedLastName":"Santos
         del Nariz","lastName":{"localized":{"en_US":"Santos del Nariz"},"preferredLocale":{"country":"US","language":"en"}},"vanityName":"miguel-santos-del-nariz","positions":{"1231524997":{"startMonthYear":{"year":2014},"companyName":{"localized":{"en_US":"Ceres
         Logic"},"preferredLocale":{"country":"US","language":"en"}},"title":{"localized":{"en_US":"Social
         Media Specialist"},"preferredLocale":{"country":"US","language":"en"}}},"1069560016":{"startMonthYear":{"year":2009},"endMonthYear":{"year":2014},"companyName":{"localized":{"en_US":"Winletric"},"preferredLocale":{"country":"US","language":"en"}},"title":{"localized":{"en_US":"Warehouse
-        Manager"},"preferredLocale":{"country":"US","language":"en"}}}},"pictureInfo":{"croppedImage":"urn:li:media:/gcrc/dms/image/C4E03AQEmhyl0HXzfGQ/profile-displayphoto-shrink_800_800/0?e=1531353600&v=beta&t=Bvfb2MAIeoVtSJZAjfnLYM1pxkyjOcD5_BTO9uyNG8I","masterImage":"urn:li:media:/gcrc/dms/image/C4E00AQFBxXq_zXDwiw/profile-originalphoto-shrink_900_1200/0?e=1526058000&v=beta&t=XHr0XI053AtrWMRpEIvvZaiEQHzc2H0I9ncI3S5Qvj0","photoFilterEditInfo":{"bottomLeft":{"x":-6.178632484870436E-17,"y":1.0},"saturation":0.0,"brightness":0.0,"vignette":0.0,"photoFilterType":"ORIGINAL","bottomRight":{"x":1.0,"y":1.0},"topLeft":{"x":-6.178632484870436E-17,"y":0.0},"contrast":0.0,"topRight":{"x":1.0,"y":0.0}}},"firstName":{"localized":{"en_US":"Miguel"},"preferredLocale":{"country":"US","language":"en"}},"profilePicture":{"displayImage":"urn:li:digitalmediaAsset:C4E03AQEmhyl0HXzfGQ","created":1505332528742,"lastModified":1505332528742,"photoFilterEditInfo":{"bottomLeft":{"x":-6.178632484870436E-17,"y":1.0},"saturation":0.0,"brightness":0.0,"vignette":0.0,"photoFilterType":"ORIGINAL","bottomRight":{"x":1.0,"y":1.0},"topLeft":{"x":-6.178632484870436E-17,"y":0.0},"contrast":0.0,"topRight":{"x":1.0,"y":0.0}}},"industryId":"urn:li:industry:4","location":{"countryCode":"us","postalCode":"04768","userSelectedGeoPlaceCode":"5-2-0-2-29","standardizedLocationUrn":"urn:li:standardizedLocationKey:(us,04768)"},"id":"MpkAFJTlPY","lastModified":1524678302559,"headline":{"localized":{"en_US":"Social
+        Manager"},"preferredLocale":{"country":"US","language":"en"}}}},"pictureInfo":{"croppedImage":"urn:li:media:/gcrc/dms/image/C4E03AQEmhyl0HXzfGQ/profile-displayphoto-shrink_800_800/0?e=1532563200&v=beta&t=YgAaVHRcz-kCCjO0q4tLFqKCfagER0x4cba-AnuCFlY","masterImage":"urn:li:media:/gcrc/dms/image/C4E00AQFBxXq_zXDwiw/profile-originalphoto-shrink_900_1200/0?e=1527015600&v=beta&t=h4OmZxStzQ30Db1m1Qxe8h9Ll54_Z_eXZqYsBtfGia4","photoFilterEditInfo":{"bottomLeft":{"x":-6.178632484870436E-17,"y":1.0},"saturation":0.0,"brightness":0.0,"vignette":0.0,"photoFilterType":"ORIGINAL","bottomRight":{"x":1.0,"y":1.0},"topLeft":{"x":-6.178632484870436E-17,"y":0.0},"contrast":0.0,"topRight":{"x":1.0,"y":0.0}}},"firstName":{"localized":{"en_US":"Miguel"},"preferredLocale":{"country":"US","language":"en"}},"profilePicture":{"displayImage":"urn:li:digitalmediaAsset:C4E03AQEmhyl0HXzfGQ","created":1505332528742,"lastModified":1505332528742,"photoFilterEditInfo":{"bottomLeft":{"x":-6.178632484870436E-17,"y":1.0},"saturation":0.0,"brightness":0.0,"vignette":0.0,"photoFilterType":"ORIGINAL","bottomRight":{"x":1.0,"y":1.0},"topLeft":{"x":-6.178632484870436E-17,"y":0.0},"contrast":0.0,"topRight":{"x":1.0,"y":0.0}}},"industryId":"urn:li:industry:4","location":{"countryCode":"us","postalCode":"04768","userSelectedGeoPlaceCode":"5-2-0-2-29","standardizedLocationUrn":"urn:li:standardizedLocationKey:(us,04768)"},"id":"MpkAFJTlPY","lastModified":1524678302559,"headline":{"localized":{"en_US":"Social
         Media Specialist at Ceres Logic"},"preferredLocale":{"country":"US","language":"en"}},"localizedFirstName":"Miguel"}'
     http_version: 
-  recorded_at: Thu, 10 May 2018 16:18:18 GMT
-recorded_with: VCR 3.0.3
+  recorded_at: Mon, 21 May 2018 18:34:01 GMT
+recorded_with: VCR 4.0.0
