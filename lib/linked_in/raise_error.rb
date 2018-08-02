@@ -14,8 +14,7 @@ module LinkedIn
       when 404
         raise LinkedIn::NotFoundError.new(data), "(#{data.status}): #{data.message}"
       when 500
-        raise LinkedIn::InformLinkedInError.new(data),
-          "LinkedIn had an internal error. Please let them know in the forum. (#{data.status}): #{data.message}"
+        raise LinkedIn::InformLinkedInError.new(data), "LinkedIn had an internal error. (#{data.status}): #{data.message}"
       when 502..504
         raise LinkedIn::UnavailableError.new(data), "(#{data.status}): #{data.message}"
       else
