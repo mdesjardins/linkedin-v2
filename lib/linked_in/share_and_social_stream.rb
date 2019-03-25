@@ -70,6 +70,15 @@ module LinkedIn
       post(path, MultiJson.dump(defaults.merge(options)), 'Content-Type' => 'application/json')
     end
 
+    # Retrieve a Summary of Social Actions
+    #
+    # https://docs.microsoft.com/en-us/linkedin/marketing/integrations/community-management/shares/network-update-social-actions#retrieve-a-summary-of-social-actions
+    #
+    def get_social_actions share_urns
+      path = '/socialActions'
+      get(path, ids: share_urns)
+    end
+
     # Retrieves the likes for a specific post.
     #
     # @see https://developer.linkedin.com/docs/guide/v2/shares/network-update-social-actions#retrieve
