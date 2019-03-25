@@ -58,7 +58,8 @@ module LinkedIn
                                               :like,
                                               :unlike,
                                               :comments,
-                                              :comment
+                                              :comment,
+                                              :get_share,
 
     def_delegators :@media, :summary,
                             :upload

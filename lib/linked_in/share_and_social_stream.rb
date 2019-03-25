@@ -36,6 +36,16 @@ module LinkedIn
       get(path, options)
     end
 
+    # Retrieve Share by ID
+    #
+    # https://docs.microsoft.com/en-us/linkedin/marketing/integrations/community-management/shares/share-api#look-up-share-by-id
+    #
+    def get_share(options = {})
+      id = options.delete(:id)
+      path = "/shares/#{id}"
+      get(path, options)
+    end
+
     # Create one share from a person, organization, or organizationBrand.
     #
     # Permissions:
