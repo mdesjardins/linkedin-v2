@@ -141,6 +141,7 @@ module LinkedIn
     #
     # @option options [String] :urn, specifies activity queried for comments (e.g.,
     # urn:li:article:123)
+    # @option options [String] :parent_comment, specifies the urn of the parent comment
     # @option options [String] :actor, specifies the entity performing the action. It should b    # represented by a urn:li:person:{id} or urn:li:organization:{id} URN.
     # @option options [String] :message, the text content of the comment.
     #
@@ -148,13 +149,14 @@ module LinkedIn
       urn = options.delete(:urn)
       actor = options.delete(:actor)
       message = options.delete(:message)
+      parent_comment = options.delete(:parent_comment)
+
       body = {
         actor: actor,
-        message: {
-          attributes: [],
-          text: message
-        }
+        message: { text: message }
       }
+      body.merge!(parentComment: parent_comment) if parent_comment
+
       path = "/socialActions/#{urn}/comments"
       post(path, MultiJson.dump(body), 'Content-Type' => 'application/json')
     end
