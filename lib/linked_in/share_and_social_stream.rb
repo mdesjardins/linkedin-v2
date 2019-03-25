@@ -160,5 +160,14 @@ module LinkedIn
       path = "/socialActions/#{urn}/comments"
       post(path, MultiJson.dump(body), 'Content-Type' => 'application/json')
     end
+
+    # Migrate from Update Keys to Share URNs
+    #
+    # https://docs.microsoft.com/en-us/linkedin/marketing/integrations/community-management/shares/share-api#migrate-from-update-keys-to-share-urns
+    #
+    def migrate_update_keys update_keys
+      path = '/activities'
+      get(path, ids: update_keys)
+    end
   end
 end
