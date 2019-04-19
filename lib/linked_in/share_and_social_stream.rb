@@ -36,6 +36,16 @@ module LinkedIn
       get(path, options)
     end
 
+    # Retrieve Share by ID
+    #
+    # https://docs.microsoft.com/en-us/linkedin/marketing/integrations/community-management/shares/share-api#look-up-share-by-id
+    #
+    def get_share(options = {})
+      id = options.delete(:id)
+      path = "/shares/#{id}"
+      get(path, options)
+    end
+
     # Create one share from a person, organization, or organizationBrand.
     #
     # Permissions:
@@ -58,6 +68,15 @@ module LinkedIn
         }
       }
       post(path, MultiJson.dump(defaults.merge(options)), 'Content-Type' => 'application/json')
+    end
+
+    # Retrieve a Summary of Social Actions
+    #
+    # https://docs.microsoft.com/en-us/linkedin/marketing/integrations/community-management/shares/network-update-social-actions#retrieve-a-summary-of-social-actions
+    #
+    def get_social_actions share_urns
+      path = '/socialActions'
+      get(path, ids: share_urns)
     end
 
     # Retrieves the likes for a specific post.
@@ -122,6 +141,7 @@ module LinkedIn
     #
     # @option options [String] :urn, specifies activity queried for comments (e.g.,
     # urn:li:article:123)
+    # @option options [String] :parent_comment, specifies the urn of the parent comment
     # @option options [String] :actor, specifies the entity performing the action. It should b    # represented by a urn:li:person:{id} or urn:li:organization:{id} URN.
     # @option options [String] :message, the text content of the comment.
     #
@@ -129,15 +149,25 @@ module LinkedIn
       urn = options.delete(:urn)
       actor = options.delete(:actor)
       message = options.delete(:message)
+      parent_comment = options.delete(:parent_comment)
+
       body = {
         actor: actor,
-        message: {
-          attributes: [],
-          text: message
-        }
+        message: { text: message }
       }
+      body.merge!(parentComment: parent_comment) if parent_comment
+
       path = "/socialActions/#{urn}/comments"
       post(path, MultiJson.dump(body), 'Content-Type' => 'application/json')
+    end
+
+    # Migrate from Update Keys to Share URNs
+    #
+    # https://docs.microsoft.com/en-us/linkedin/marketing/integrations/community-management/shares/share-api#migrate-from-update-keys-to-share-urns
+    #
+    def migrate_update_keys update_keys
+      path = '/activities'
+      get(path, ids: update_keys)
     end
   end
 end

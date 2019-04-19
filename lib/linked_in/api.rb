@@ -48,7 +48,8 @@ module LinkedIn
                                     :organization_search,
                                     :organization_page_statistics,
                                     :organization_follower_statistics,
-                                    :organization_share_statistics
+                                    :organization_share_statistics,
+                                    :organization_follower_count
 
     def_delegators :@communications, :send_message
 
@@ -58,7 +59,10 @@ module LinkedIn
                                               :like,
                                               :unlike,
                                               :comments,
-                                              :comment
+                                              :comment,
+                                              :get_share,
+                                              :get_social_actions,
+                                              :migrate_update_keys
 
     def_delegators :@media, :summary,
                             :upload

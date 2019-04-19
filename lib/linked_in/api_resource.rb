@@ -72,7 +72,7 @@ module LinkedIn
     def delete(path=nil, body=nil, headers=nil, &block)
       # @connection.delete(prepend_prefix(path), params, headers, &block)
       # To be able to DELETE with a body:
-      reponse = @connection.run_request(:delete, prepend_prefix(path), body, headers, &block)
+      response = @connection.run_request(:delete, prepend_prefix(path), body, headers, &block)
 
       Mash.from_json(response.body)
     end

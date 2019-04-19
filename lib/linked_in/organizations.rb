@@ -113,6 +113,15 @@ module LinkedIn
       get(path, options)
     end
 
+    # Retrieve Organization Follower Count
+    #
+    # https://docs.microsoft.com/en-us/linkedin/marketing/integrations/community-management/organizations/organization-lookup-api#retrieve-organization-follower-count
+    #
+    def organization_follower_count organization_urn
+      path = "/networkSizes/#{organization_urn}?edgeType=CompanyFollowedByMember"
+      get(path)
+    end
+
     # TODO MOVE TO SOCIAL ACTIONS.
     #
     # # Retrieve comments on a particular company update:
