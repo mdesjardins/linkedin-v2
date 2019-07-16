@@ -47,7 +47,11 @@ module LinkedIn
     end
 
     def content_type(media)
-      ::MIME::Types.type_for(extension(media)).first.content_type
+      ::MIME::Types.type_for(extension(media)).first&.content_type || get_content_type_from_file(media)
+    end
+
+    def get_content_type_from_file(media)
+      `file --brief --mime-type - < #{Shellwords.shellescape(media.path)}`.strip
     end
 
     def file(source_url, options)
