@@ -76,6 +76,7 @@ module LinkedIn
     #
     def get_social_actions share_urns
       path = '/socialActions'
+      share_urns.map!{|urn| urn.is_a?(Numeric) ? id_to_urn('share', urn) : urn}
       get(path, ids: share_urns)
     end
 

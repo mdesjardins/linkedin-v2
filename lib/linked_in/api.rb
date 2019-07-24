@@ -67,6 +67,8 @@ module LinkedIn
     def_delegators :@media, :summary,
                             :upload
 
+    def_delegators :@ad_analytics, :ad_analytics
+
     private ##############################################################
 
     def initialize_endpoints
@@ -78,6 +80,7 @@ module LinkedIn
       @share_and_social_stream = LinkedIn::ShareAndSocialStream.new(@connection)
       @media = LinkedIn::Media.new(@connection)
       # @groups = LinkedIn::Groups.new(@connection) not supported by v2 API?
+      @ad_analytics = LinkedIn::AdAnalytics.new(@connection)
     end
 
     def default_params
