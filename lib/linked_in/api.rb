@@ -69,6 +69,17 @@ module LinkedIn
 
     def_delegators :@ad_analytics, :ad_analytics
 
+    def_delegators :@standardized_data, :degrees,
+                                        :fields_of_study,
+                                        :functions,
+                                        :industries,
+                                        :countries,
+                                        :seniorities,
+                                        :skills_data,
+                                        :super_titles,
+                                        :titles,
+                                        :iab_categories
+
     private ##############################################################
 
     def initialize_endpoints
@@ -81,6 +92,7 @@ module LinkedIn
       @media = LinkedIn::Media.new(@connection)
       # @groups = LinkedIn::Groups.new(@connection) not supported by v2 API?
       @ad_analytics = LinkedIn::AdAnalytics.new(@connection)
+      @standardized_data = LinkedIn::StandardizedData.new(@connection)
     end
 
     def default_params
