@@ -20,7 +20,7 @@ module LinkedIn
       granularity = options.delete(:granularity) || 'ALL'
       date_from = options.delete(:date_from) || 2.weeks.ago.to_date
       urns = options.delete(:urns) || []
-      urns.map!{|urn| id_to_urn(pivot.downcase, urn)}
+      urns.map!{|urn| urn.is_a?(Numeric) ? id_to_urn(pivot.downcase, urn) : urn}
       urn_params = urns.each_with_index.map{|urn, i| "#{PIVOT_TO_PARAM[pivot]}[#{i}]=#{urn}"}.join('&')
 
       path = "/adAnalyticsV2?q=analytics&pivot=#{pivot}&#{date_to_params(date_from)}&timeGranularity=#{granularity}&#{urn_params}"
