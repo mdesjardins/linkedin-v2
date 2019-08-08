@@ -67,6 +67,8 @@ module LinkedIn
     def_delegators :@media, :summary,
                             :upload
 
+    def_delegators :@ad_accounts, :ad_accounts
+
     def_delegators :@ad_analytics, :ad_analytics
 
     def_delegators :@standardized_data, :degrees,
@@ -91,6 +93,7 @@ module LinkedIn
       @share_and_social_stream = LinkedIn::ShareAndSocialStream.new(@connection)
       @media = LinkedIn::Media.new(@connection)
       # @groups = LinkedIn::Groups.new(@connection) not supported by v2 API?
+      @ad_accounts = LinkedIn::AdAccounts.new(@connection)
       @ad_analytics = LinkedIn::AdAnalytics.new(@connection)
       @standardized_data = LinkedIn::StandardizedData.new(@connection)
     end

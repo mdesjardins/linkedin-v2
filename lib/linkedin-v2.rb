@@ -34,6 +34,7 @@ require "linked_in/organizations"
 require "linked_in/communications"
 require "linked_in/share_and_social_stream"
 require 'linked_in/media'
+require 'linked_in/ad_accounts'
 require 'linked_in/ad_analytics'
 require 'linked_in/standardized_data'
 
