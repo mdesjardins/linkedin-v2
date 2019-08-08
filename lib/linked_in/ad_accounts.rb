@@ -7,7 +7,7 @@ module LinkedIn
   class AdAccounts < APIResource
 
     def ad_accounts(options = {})
-      path = "/adAccountsV2"
+      path = "/adAccountsV2?q=search"
       get(path, options)
     end
 
