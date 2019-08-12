@@ -67,7 +67,9 @@ module LinkedIn
     def_delegators :@media, :summary,
                             :upload
 
-    def_delegators :@ad_accounts, :ad_accounts
+    def_delegators :@ad_accounts, :ad_accounts,
+                                  :ad_campaigns,
+                                  :ad_creatives
 
     def_delegators :@ad_analytics, :ad_analytics
 

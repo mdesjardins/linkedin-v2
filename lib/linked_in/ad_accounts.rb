@@ -11,5 +11,17 @@ module LinkedIn
       get(path, options)
     end
 
+    def ad_campaigns(options = {})
+      ad_account = options.delete(:ad_account)
+      path = "adCampaignsV2?q=search&search.account.values[0]=#{ad_account}"
+      get(path, options)
+    end
+
+    def ad_creatives(options = {})
+      status = options.delete(:status) || 'ACTIVE'
+      path = "/adCreativesV2?q=search&search.status.values[0]=#{status}"
+      get(path, options)
+    end
+
   end
 end
