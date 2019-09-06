@@ -109,10 +109,15 @@ module LinkedIn
     # @option urn [String] organization URN
     # @return [LinkedIn::Mash]
     def organization_share_statistics(options = {})
+      path = "/organizationalEntityShareStatistics?q=organizationalEntity&organizationalEntity=#{options.delete(:urn)}"
+
       share_urns = options.delete(:share_urns) || []
-      share_urns.map!{|urn| urn.is_a?(Numeric) ? id_to_urn('share', urn) : urn}
-      urn_params = share_urns.each_with_index.map{|urn, i| "shares[#{i}]=#{urn}"}.join('&')
-      path = "/organizationalEntityShareStatistics?q=organizationalEntity&organizationalEntity=#{options.delete(:urn)}&#{urn_params}"
+      if share_urns.any?
+        share_urns.map!{|urn| urn.is_a?(Numeric) ? id_to_urn('share', urn) : urn}
+        urn_params = share_urns.each_with_index.map{|urn, i| "shares[#{i}]=#{urn}"}.join('&')
+        path << "&#{urn_params}"
+      end
+
       get(path, options)
     end
 
