@@ -16,7 +16,8 @@ module LinkedIn
   class Assets < APIResource
     class UploadFailed < StandardError; end
     class UploadTimeout < UploadFailed; end
-    class UploadIncomplete < StandardError; end
+    class UploadIncomplete < UploadFailed; end
+    class UploadClientError < UploadFailed; end
 
     # Upload images and videos to LinkedIn from a supplied URL.
     #
@@ -111,10 +112,14 @@ module LinkedIn
           upload_status = upload_status(asset_entity: asset_entity).recipes[0].status
 
           case upload_status
+          when "WAITING_UPLOAD"
+            sleep POLL_SLEEP_SECONDS
           when "PROCESSING"
             sleep POLL_SLEEP_SECONDS
           when "INCOMPLETE"
             raise UploadIncomplete
+          when "CLIENT_ERROR"
+            raise UploadClientError
           when "AVAILABLE"
             break
           end
