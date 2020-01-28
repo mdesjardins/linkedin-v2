@@ -33,7 +33,8 @@ require "linked_in/search"
 require "linked_in/organizations"
 require "linked_in/communications"
 require "linked_in/share_and_social_stream"
-require 'linked_in/media'
+require 'linked_in/media' # To be deprecated 01.30.2020
+require "linked_in/assets"
 
 # The primary API object that makes requests.
 # It composes in all of the endpoints

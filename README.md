@@ -3,13 +3,13 @@
 ## WARNING: DANGER WILL ROBINSON
 
 This is very much a work in progress. Currently only the shares/social stream,
-organization, and media upload related endpoints have been verified to work.
+organization, and assets upload related endpoints have been verified to work.
 Having said that, those endpoints are using this gem in a production application,
 so they're reliable enough. :)
 
 Many endpoints still need to be written, and as I don't have the requisite partner
 status w/ LinkedIn, I can't develop against the jobs API. Many of the specs still
-fail. *Caveat emptor*
+fail. _Caveat emptor_
 
 ## NOW BACK TO YOUR REGULARLY SCHEDULED PROGRAMMING
 
@@ -173,7 +173,8 @@ api.organization(urn: 'urn:li:organization:12345')
 ### Jobs
 
 ## DON'T HAVE ACCESS. :(
-```
+
+````
 
 ### Share and Social Stream
 
@@ -193,7 +194,7 @@ api.likes(urn: "urn:li:article:12345")
 
 api.like(urn: "urn:li:activity:12345")
 api.unlike(urn: "urn:li:activity:12345")
-```
+````
 
 ### Communications
 
@@ -210,15 +211,17 @@ Read the source for [LinkedIn::API](https://github.com/mdesjardins/linkedin-v2/b
 Please see [CONTRIBUTING.md](https://github.com/mdesjardins/linkedin-v2/blob/master/CONTRIBUTING.md) for details.
 
 # Credits
+
 Huge, huge props to Evan Morikawa for writing the v1 version of this gem. This gem is
 pretty much all of that work, but gutted and replaced with v2 endpoints.
 
-* [Evan Morikawa](https://twitter.com/eom) ([emorikawa](https://github.com/emorikawa))
-* [Matt Kirk](http://matthewkirk.com) ([hexgnu](https://github.com/hexgnu))
-* [Wynn Netherland](http://wynnetherland.com) ([pengwynn](https://github.com/pengwynn))
-* Josh Kalderimis ([joshk](https://github.com/joshk))
-* Erik Michaels-Ober ([sferik](https://github.com/sferik))
-* And Many More [Contributors](https://github.com/emorikawa/linkedin-oauth2/graphs/contributors)
+- [Evan Morikawa](https://twitter.com/eom) ([emorikawa](https://github.com/emorikawa))
+- [Matt Kirk](http://matthewkirk.com) ([hexgnu](https://github.com/hexgnu))
+- [Wynn Netherland](http://wynnetherland.com) ([pengwynn](https://github.com/pengwynn))
+- Josh Kalderimis ([joshk](https://github.com/joshk))
+- Erik Michaels-Ober ([sferik](https://github.com/sferik))
+- And Many More [Contributors](https://github.com/emorikawa/linkedin-oauth2/graphs/contributors)
 
 # License
+
 Copyright :copyright: 2018-present [Mike Desjardins](https://twitter.com/mdesjardins) 2014-2018 [Evan Morikawa](https://twitter.com/e0m) 2013-2014 [Matt Kirk](http://matthewkirk.com/) 2009-11 [Wynn Netherland](http://wynnnetherland.com/) and [contributors](https://github.com/emorikawa/linkedin-oauth2/graphs/contributors). It is free software, and may be redistributed under the terms specified in the MIT-LICENSE file. See [LICENSE](https://github.com/emorikawa/linkedin-oauth2/blob/master/LICENSE) for details.
