@@ -41,7 +41,8 @@ module LinkedIn
 
       upload_resp = @connection.put(media_upload_endpoint) do |req|
         req.headers['Content-Type'] = content_type
-        req.body = File.binread(media)
+        req.headers['Content-Length'] = media.size.to_s
+        req.body = Faraday::UploadIO.new(media, content_type)
         req.options.timeout = timeout
         req.options.open_timeout = timeout
       end
