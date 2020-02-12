@@ -3,7 +3,7 @@ require 'open-uri'
 
 module LinkedIn
   DEFAULT_TIMEOUT_SECONDS = 300
-  POLL_SLEEP_SECONDS = 5
+  DEFAULT_POLL_SLEEP_SECONDS = 10
 
   CONTENT_TYPE = "application/json"
   UPLOAD_MECHANISM = "com.linkedin.digitalmedia.uploading.MediaUploadHttpRequest"
@@ -26,6 +26,7 @@ module LinkedIn
     # @options options [String] :owner, the owner entity id.
     # @options options [String] :source_url, the URL to the content to be uploaded.
     # @options options [Numeric] :timeout, optional timeout value in seconds, defaults to 300.
+    # @options options [Numeric] :poll_sleep_seconds, optional poll sleep value in seconds, defaults to 10.
     # @return [String], the asset entity
     #
     def upload(options = {})
@@ -33,6 +34,7 @@ module LinkedIn
 
       source_url = options.delete(:source_url)
       timeout = options.delete(:timeout) || DEFAULT_TIMEOUT_SECONDS
+      poll_sleep_seconds = options.delete(:poll_sleep_seconds) || DEFAULT_POLL_SLEEP_SECONDS
 
       media_upload_endpoint = upload_url
 
@@ -49,7 +51,7 @@ module LinkedIn
 
       raise UploadFailed unless upload_resp.success?
 
-      poll_for_completion(asset_entity: asset_entity)
+      poll_for_completion(asset_entity: asset_entity, poll_sleep_seconds: poll_sleep_seconds)
 
       asset_entity
     end
@@ -107,16 +109,16 @@ module LinkedIn
       [asset_entity, upload_url]
     end
 
-    def poll_for_completion(asset_entity:)
+    def poll_for_completion(asset_entity:, poll_sleep_seconds:)
       Timeout.timeout(DEFAULT_TIMEOUT_SECONDS, UploadTimeout) do
         loop do
           upload_status = upload_status(asset_entity: asset_entity).recipes[0].status
 
           case upload_status
           when "WAITING_UPLOAD"
-            sleep POLL_SLEEP_SECONDS
+            sleep poll_sleep_seconds
           when "PROCESSING"
-            sleep POLL_SLEEP_SECONDS
+            sleep poll_sleep_seconds
           when "INCOMPLETE"
             raise UploadIncomplete
           when "CLIENT_ERROR"
