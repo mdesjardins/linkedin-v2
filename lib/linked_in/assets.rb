@@ -110,6 +110,8 @@ module LinkedIn
     end
 
     def poll_for_completion(asset_entity:, poll_sleep_seconds:)
+      sleep poll_sleep_seconds
+
       Timeout.timeout(DEFAULT_TIMEOUT_SECONDS, UploadTimeout) do
         loop do
           upload_status = upload_status(asset_entity: asset_entity).recipes[0].status
