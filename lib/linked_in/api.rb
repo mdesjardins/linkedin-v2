@@ -67,6 +67,10 @@ module LinkedIn
     def_delegators :@media, :summary,
                             :upload
 
+    def_delegators :@ugc_posts, :get_post,
+                                :get_posts_batch,
+                                :posts
+
     def_delegators :@ad_accounts, :ad_accounts,
                                   :ad_campaigns,
                                   :ad_creatives
@@ -94,6 +98,7 @@ module LinkedIn
       @communications = LinkedIn::Communications.new(@connection)
       @share_and_social_stream = LinkedIn::ShareAndSocialStream.new(@connection)
       @media = LinkedIn::Media.new(@connection)
+      @ugc_posts = LinkedIn::UgcPosts.new(@connection)
       # @groups = LinkedIn::Groups.new(@connection) not supported by v2 API?
       @ad_accounts = LinkedIn::AdAccounts.new(@connection)
       @ad_analytics = LinkedIn::AdAnalytics.new(@connection)
