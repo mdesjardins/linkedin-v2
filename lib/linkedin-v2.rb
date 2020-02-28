@@ -88,7 +88,7 @@ module Faraday
             buffer << "#{encoded_key}=#{encoded_value}&"
           end
         else
-          if value.include?('List')
+          if value.to_s.include?('List')
             # List param must be encoded separately
             urns = value.gsub('List(','').gsub(')','').split(',')
             encoded_value = "List(#{urns.map{|u| escape(u)}.join(',')})"
