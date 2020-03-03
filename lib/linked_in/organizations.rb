@@ -117,6 +117,12 @@ module LinkedIn
         urn_params = share_urns.each_with_index.map{|urn, i| "shares[#{i}]=#{urn}"}.join('&')
         path << "&#{urn_params}"
       end
+      ugc_post_urns = options.delete(:ugc_post_urns) || []
+      if ugc_post_urns.any?
+        ugc_post_urns.map!{|urn| urn.is_a?(Numeric) ? id_to_urn('ugcPost', urn) : urn}
+        urn_params = ugc_post_urns.each_with_index.map{|urn, i| "ugcPosts[#{i}]=#{urn}"}.join('&')
+        path << "&#{urn_params}"
+      end
 
       get(path, options)
     end
