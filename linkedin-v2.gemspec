@@ -21,7 +21,7 @@ Gem::Specification.new do |gem|
   gem.required_ruby_version = '>= 1.9.3'
 
   gem.add_dependency "oauth2",  "~> 1.0"
-  gem.add_dependency "hashie",  "~> 3.2"
+  gem.add_dependency "hashie",  "~> 4.0"
   gem.add_dependency "faraday", "~> 0.11"
   gem.add_dependency 'mime-types', '>= 1.16'
 
