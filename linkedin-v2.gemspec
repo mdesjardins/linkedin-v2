@@ -22,7 +22,7 @@ Gem::Specification.new do |gem|
 
   gem.add_dependency "oauth2",  "~> 1.0"
   gem.add_dependency "hashie",  "~> 3.2"
-  gem.add_dependency "faraday", "~> 0.11"
+  gem.add_dependency "faraday", "~> 1.0"
   gem.add_dependency 'mime-types', '>= 1.16'
 
   gem.add_development_dependency "rake"
