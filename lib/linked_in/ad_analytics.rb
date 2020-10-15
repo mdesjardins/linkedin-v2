@@ -33,17 +33,20 @@ module LinkedIn
     # accounts - Match result by sponsored ad account facets. Defaults to empty.
     # companies - Match result by company facets. Defaults to empty.
     #
+    # options[:fields] (REQUIRED) Array of fields to return. Defaults to empty.
+    #
     # options[:urns] Array of urns to match the facet on.
     def ad_analytics(options = {})
       pivot = options.delete(:pivot) || 'SHARE'
       facet = options.delete(:facet) || 'shares'
       granularity = options.delete(:granularity) || 'ALL'
+      fields = options.delete(:fields) || []
       date_from = options.delete(:date_from) || 2.weeks.ago.to_date
       urns = options.delete(:urns) || []
       urns.map!{|urn| urn.is_a?(Numeric) ? id_to_urn(pivot.downcase, urn) : urn}
       urn_params = urns.each_with_index.map{|urn, i| "#{facet}[#{i}]=#{urn}"}.join('&')
 
-      path = "/adAnalyticsV2?q=analytics&pivot=#{pivot}&#{date_to_params(date_from)}&timeGranularity=#{granularity}&#{urn_params}"
+      path = "/adAnalyticsV2?q=analytics&pivot=#{pivot}&#{date_to_params(date_from)}&timeGranularity=#{granularity}&fields=#{fields.join(',')}&#{urn_params}"
       get(path, options)
     end
 
