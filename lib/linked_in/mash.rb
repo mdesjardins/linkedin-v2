@@ -3,6 +3,8 @@ module LinkedIn
   # LinkedIn::Mash inherits from Hashie::Mash
   class Mash < ::Hashie::Mash
 
+    disable_warnings
+
     # a simple helper to convert a json string to a Mash
     def self.from_json(json_string)
       result_hash = JSON.load(json_string)

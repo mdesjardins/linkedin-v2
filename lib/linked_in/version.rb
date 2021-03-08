@@ -1,3 +1,3 @@
 module LinkedIn
-  VERSION = '0.1.12e'
+  VERSION = '0.1.13e'
 end
