@@ -128,7 +128,9 @@ module LinkedIn
       tok = self.auth_code.get_token(code, options)
       self.access_token = LinkedIn::AccessToken.new(tok.token,
                                                     tok.expires_in,
-                                                    tok.expires_at)
+                                                    tok.expires_at,
+                                                    tok.refresh_token,
+                                                    tok.params['refresh_token_expires_in'])
       return self.access_token
     rescue ::OAuth2::Error => e
       raise OAuthError.new(e.response)
