@@ -1,7 +1,7 @@
 module LinkedIn
   # A simple data object to contain the token string and expiration data.
   class AccessToken
-    attr_accessor :token, :expires_in, :expires_at
+    attr_accessor :token, :expires_in, :expires_at, :refresh_token, :refresh_token_expires_in
 
     # Creates a simple data wrapper for an access token.
     #
