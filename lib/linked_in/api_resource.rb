@@ -93,9 +93,10 @@ module LinkedIn
 
       headers = options.delete(:headers) || {}
 
-      params = format_options_for_query(options)
+      #Removed due refresh_token API error
+      #params = format_options_for_query(options)
 
-      return [path, params, headers]
+      return [path, options, headers]
     end
 
     # Dasherizes the param keys

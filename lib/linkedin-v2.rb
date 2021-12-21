@@ -39,6 +39,7 @@ require 'linked_in/video_analytics'
 require 'linked_in/ad_accounts'
 require 'linked_in/ad_analytics'
 require 'linked_in/standardized_data'
+require 'linked_in/refresh_token'
 
 # The primary API object that makes requests.
 # It composes in all of the endpoints

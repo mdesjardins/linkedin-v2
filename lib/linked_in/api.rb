@@ -14,6 +14,12 @@ module LinkedIn
         conn.adapter Faraday.default_adapter
       end
 
+      @oauth_connection =
+        LinkedIn::Connection.new params: default_params, headers: default_headers, url: 'https://www.linkedin.com/oauth/v2' do |conn|
+        conn.request :multipart
+        conn.adapter Faraday.default_adapter
+      end
+
       initialize_endpoints
     end
 
@@ -90,6 +96,8 @@ module LinkedIn
                                         :titles,
                                         :iab_categories
 
+    def_delegators :@refresh_token, :refresh_token
+
     private ##############################################################
 
     def initialize_endpoints
@@ -106,6 +114,7 @@ module LinkedIn
       @ad_accounts = LinkedIn::AdAccounts.new(@connection)
       @ad_analytics = LinkedIn::AdAnalytics.new(@connection)
       @standardized_data = LinkedIn::StandardizedData.new(@connection)
+      @refresh_token = LinkedIn::RefreshToken.new(@oauth_connection)
     end
 
     def default_params
