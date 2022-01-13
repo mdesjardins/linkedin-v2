@@ -12,41 +12,45 @@ http_interactions:
       Authorization:
       - Bearer AQVM91zzF-bLiOfCsTi8ktxnq99l-tW9meri8F9ZEWAuHf5g1bO_Pa4p0nFwKvZ7VFdSERAnJZq3eNOq6BzDPFNIyGIy50s-7HkLq2hE5uy6HrAQrsMAQR_qZxnBrSD11g_M2sF5XB5fUHZOXEQFgFaXB0M19VUAsvsz3yg-7zMI7w9Zn_DYTLO1e2W9VEZrOgVmRNt1XBIT_pdQO7pQkKv4702yJTrIBOuhZWNLZRClPHd2RRhPf2SJeTkodbnL4xSvzcyEPpLaTPyZIVJnBcsAzYFiG_pJtyGs7x-iWbUZsYgnUVSy8Wg-5eqmvze5tuZdICIP0PJ0AVMNGOxRRiLOEh8MSg
       User-Agent:
-      - Faraday v0.12.2
+      - Faraday v1.8.0
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
   response:
     status:
-      code: 404
-      message: Not Found
+      code: 401
+      message: Unauthorized
     headers:
+      X-Li-Responseorigin:
+      - RGW
       X-Restli-Gateway-Error:
       - 'true'
       Content-Type:
       - application/json
+      Content-Length:
+      - '93'
       Date:
-      - Mon, 21 May 2018 18:34:05 GMT
-      X-Li-Fabric:
-      - prod-lva1
-      Transfer-Encoding:
-      - chunked
+      - Wed, 12 Jan 2022 21:37:05 GMT
       Connection:
       - keep-alive
+      X-Li-Fabric:
+      - prod-lva1
       X-Li-Pop:
-      - prod-edc2
+      - prod-lva1-x
       X-Li-Proto:
       - http/1.1
-      Set-Cookie:
-      - lidc="b=VB96:g=1172:u=20:i=1526927645:t=1527014039:s=AQFrPI31qW1Sjy3IkWDRhXJC4um4wevV"
-      X-Li-Route-Key:
-      - '"b=VB96:g=1172:u=20:i=1526927645:t=1527014039:s=AQFrPI31qW1Sjy3IkWDRhXJC4um4wevV"'
       X-Li-Uuid:
-      - BPKiaZq8MBXgWcuRSSsAAA==
+      - AAXVaV7/+RaOuTEncQg2AA==
+      Set-Cookie:
+      - bcookie="v=2&42fe13dd-8a31-404b-8427-ca05636ce312"; domain=.linkedin.com;
+        Path=/; Secure; Expires=Sat, 13-Jan-2024 09:14:37 GMT; SameSite=None
+      - lidc="b=VB96:s=V:r=V:a=V:p=V:g=2650:u=117:x=1:i=1642023425:t=1642025283:v=2:sig=AQGdWom0Zpcouv7CcndA6naq2Km5zdfY"
+      X-Li-Route-Key:
+      - '"b=VB96:s=V:r=V:a=V:p=V:g=2650:u=117:x=1:i=1642023425:t=1642025283:v=2:sig=AQGdWom0Zpcouv7CcndA6naq2Km5zdfY"'
     body:
       encoding: UTF-8
-      string: '{"serviceErrorCode":0,"message":"Resource people does not exist","status":404}'
-    http_version: 
-  recorded_at: Mon, 21 May 2018 18:34:05 GMT
-recorded_with: VCR 4.0.0
+      string: '{"serviceErrorCode":65602,"message":"The token used in the request
+        has expired","status":401}'
+  recorded_at: Wed, 12 Jan 2022 21:37:05 GMT
+recorded_with: VCR 6.0.0

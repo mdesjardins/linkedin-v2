@@ -30,9 +30,9 @@ Gem::Specification.new do |gem|
 
   # We use YARD for documentation
   # Extra gems for GitHub flavored MarkDown in YARD
-  gem.add_development_dependency "yard"
-  gem.add_development_dependency "redcarpet"
-  gem.add_development_dependency "github-markdown"
+  # gem.add_development_dependency "yard"
+  # gem.add_development_dependency "redcarpet"
+  # gem.add_development_dependency "github-markdown"
 
   # We use VCR to mock LinkedIn API calls
   gem.add_development_dependency "vcr"

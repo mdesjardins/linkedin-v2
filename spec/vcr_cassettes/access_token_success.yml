@@ -94,6 +94,92 @@ http_interactions:
         to handle the request : RestException{_response=RestResponse[headers={Content-Length=10592,
         Content-Type=application/json, X-RestLi-Error-Response=true, X-RestLi-Protocol-Version=2.0.0}cookies=[],status=404,entityLength=10592]}
         ","error":"temporarily_unavailable"}'
-    http_version: 
   recorded_at: Mon, 21 May 2018 18:34:12 GMT
-recorded_with: VCR 4.0.0
+- request:
+    method: post
+    uri: https://www.linkedin.com/oauth/v2/accessToken
+    body:
+      encoding: UTF-8
+      string: client_id=dummy_client_id&client_secret=dummy_client_secret&code=dummy_code&grant_type=authorization_code&raise_errors=true&redirect_uri=http%3A%2F%2Flvh.me%3A5000
+    headers:
+      User-Agent:
+      - Faraday v1.8.0
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Cache-Control:
+      - no-cache, no-store
+      Pragma:
+      - no-cache
+      Content-Length:
+      - '116'
+      Content-Type:
+      - application/json
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Vary:
+      - Accept-Encoding
+      Set-Cookie:
+      - bcookie="v=2&22006082-3d1c-48eb-83b7-48f2821a33a0"; domain=.linkedin.com;
+        Path=/; Secure; Expires=Sat, 13-Jan-2024 09:14:43 GMT; SameSite=None
+      - bscookie="v=1&20220112213711a9a02a7f-d67b-43e8-86f1-db91217a8799AQFsaDNm1QaW9U2zWFMqF1uwoe4p2eIP";
+        domain=.www.linkedin.com; Path=/; Secure; Expires=Sat, 13-Jan-2024 09:14:43
+        GMT; HttpOnly; SameSite=None
+      - lang=v=2&lang=en-us; SameSite=None; Path=/; Domain=linkedin.com; Secure
+      - lidc="b=VB01:s=V:r=V:a=V:p=V:g=4501:u=1:x=1:i=1642023431:t=1642109831:v=2:sig=AQHucF8GZCQCeTeyQ48scid3xHYSXVpr";
+        Expires=Thu, 13 Jan 2022 21:37:11 GMT; domain=.linkedin.com; Path=/; SameSite=None;
+        Secure
+      Expect-Ct:
+      - max-age=86400, report-uri="https://www.linkedin.com/platform-telemetry/ct"
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Content-Security-Policy:
+      - 'default-src *; connect-src ''self'' https://media-src.linkedin.com/media/
+        www.linkedin.com s.c.lnkd.licdn.com m.c.lnkd.licdn.com wss://*.linkedin.com
+        dms.licdn.com https://dpm.demdex.net/id lnkd.demdex.net blob: https://accounts.google.com/gsi/status
+        https://linkedin.sc.omtrdc.net/b/ss/ www.google-analytics.com static.licdn.com
+        static-exp1.licdn.com static-exp2.licdn.com static-exp3.licdn.com media.licdn.com
+        media-exp1.licdn.com media-exp2.licdn.com media-exp3.licdn.com; img-src data:
+        blob: *; font-src data: *; style-src ''unsafe-inline'' ''self'' static-src.linkedin.com
+        *.licdn.com; script-src ''report-sample'' ''unsafe-inline'' ''unsafe-eval''
+        ''self'' spdy.linkedin.com static-src.linkedin.com *.ads.linkedin.com *.licdn.com
+        static.chartbeat.com www.google-analytics.com ssl.google-analytics.com bcvipva02.rightnowtech.com
+        www.bizographics.com sjs.bizographics.com js.bizographics.com d.la4-c1-was.salesforceliveagent.com
+        https://snap.licdn.com/li.lms-analytics/ platform.linkedin.com platform-akam.linkedin.com
+        platform-ecst.linkedin.com platform-azur.linkedin.com; object-src ''none'';
+        media-src blob: *; child-src blob: lnkd-communities: voyager: *; frame-ancestors
+        ''self''; report-uri /security/csp?e=p&f=l'
+      X-Frame-Options:
+      - sameorigin
+      X-Li-Fabric:
+      - prod-lva1
+      X-Fs-Uuid:
+      - 0005d5695f537c008a96aa30ea5f9425
+      X-Li-Pop:
+      - afd-prod-lva1-x
+      X-Li-Proto:
+      - http/1.1
+      X-Li-Uuid:
+      - AAXVaV9TfACKlqow6l+UJQ==
+      X-Cache:
+      - CONFIG_NOCACHE
+      X-Msedge-Ref:
+      - 'Ref A: 9E99BAD1739343F08DF2273D1968FF42 Ref B: BNA30EDGE0117 Ref C: 2022-01-12T21:37:11Z'
+      Date:
+      - Wed, 12 Jan 2022 21:37:10 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":"invalid_request","error_description":"Unable to retrieve
+        access token: authorization code not found"}'
+  recorded_at: Wed, 12 Jan 2022 21:37:11 GMT
+recorded_with: VCR 6.0.0
