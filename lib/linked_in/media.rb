@@ -14,39 +14,39 @@ module LinkedIn
       get(path, options)
     end
 
-    # Uploads rich media content to LinkedIn from a supplied URL.
-    #
-    # @see https://developer.linkedin.com/docs/guide/v2/shares/rich-media-shares#upload
-    #
-    # @options options [String] :source_url, the URL to the content to be uploaded.
-    # @options options [String] :type, the type of URN to use (person or organization).
-    # @options options [String] :urn, the URN of the entity uploading.
-    # @options options [Numeric] :timeout, optional timeout value in seconds, defaults to 300.
-    # @options options [String] :disposition_filename, the name of the file to be uploaded. Defaults to the basename of the URL filename.
-    # @return [LinkedIn::Mash]
-    #
-    def upload(options = {})
-      source_url = options.delete(:source_url)
-      timeout = options.delete(:timeout) || DEFAULT_TIMEOUT_SECONDS
-      type = options.delete(:type)
-      urn = options.delete(:urn)
+  # Uploads rich media content to LinkedIn from a supplied URL.
+  #
+  # @see https://docs.microsoft.com/en-us/linkedin/marketing/integrations/community-management/shares/vector-asset-api?tabs=http#upload-the-image
+  #
+  # @options options [String] :source_url, the URL to the content to be uploaded.
+  # @options options [String] :type, the type of URN to use (person or organization).
+  # @options options [String] :urn, the URN of the entity uploading.
+  # @options options [Numeric] :timeout, optional timeout value in seconds, defaults to 300.
+  # @options options [String] :disposition_filename, the name of the file to be uploaded. Defaults to the basename of the URL filename.
+  # @return [LinkedIn::Mash]
+  #
+  def upload(options = {})
+    source_url = options.delete(:source_url)
+    timeout = options.delete(:timeout) || DEFAULT_TIMEOUT_SECONDS
+    type = options.delete(:type)
+    urn = options.delete(:urn)
 
-      responseHash = register_upload(type: type, urn: urn)
-      media_upload_endpoint = responseHash.dig("value", "upload_mechanism", "com.linkedin.digitalmedia.uploading.media_upload_http_request", "upload_url")
-      asset_urn = responseHash.dig("value", "asset")
+    responseHash = register_upload(type: type, urn: urn)
+    media_upload_endpoint = responseHash.dig("value", "upload_mechanism", "com.linkedin.digitalmedia.uploading.media_upload_http_request", "upload_url")
+    asset_urn = responseHash.dig("value", "asset")
 
-      response =
-        @connection.put(media_upload_endpoint, file: file(source_url, options)) do |req|
-          req.headers['Accept'] = 'application/json'
-          req.options.timeout = timeout
-          req.options.open_timeout = timeout
-        end
-      if response.status == 201
-        asset_urn
-      else
-        raise InvalidRequest.new(response.message)
+    response =
+      @connection.put(media_upload_endpoint, file: file(source_url, options)) do |req|
+        req.headers['Accept'] = 'application/json'
+        req.options.timeout = timeout
+        req.options.open_timeout = timeout
       end
+    if response.status == 201
+      asset_urn
+    else
+      raise InvalidRequest.new(response.message)
     end
+  end
 
     # Registers a media upload with LinkedIn providing the upload URL and asset ID.
     #
