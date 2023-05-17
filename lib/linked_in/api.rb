@@ -65,7 +65,8 @@ module LinkedIn
                                               :migrate_update_keys
 
     def_delegators :@media, :summary,
-                            :upload
+                            :upload,
+                            :register_upload
 
     private ##############################################################
 
@@ -89,7 +90,7 @@ module LinkedIn
 
     def default_headers
       # https://developer.linkedin.com/documents/api-requests-json
-      return {"x-li-format" => "json", "Authorization" => "Bearer #{@access_token.token}"}
+      return {"X-Restli-Protocol-Version" => "2.0.0", "x-li-format" => "json", "Authorization" => "Bearer #{@access_token.token}"}
     end
 
     def verify_access_token!(access_token)
